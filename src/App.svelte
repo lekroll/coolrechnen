@@ -36,15 +36,16 @@
 			
 		}
 		if (operation=="*"){
-			desired= Math.round(num2/2+1);
-			b = Math.round(num1/3+1);
-			a=Math.floor(desired/b);
-			desired=a*b;
+			num1=Math.round(Math.random()*10);
+			num2=Math.round(Math.random()*10);
+			desired= num1*num2;
+			b = num1;
+			a=num2;
 			
 		}
 		if (operation==":"){
-			desired= Math.round(num2/2+1);
-			b = Math.round(num1/3+1);
+			desired= Math.round(Math.random()*10);
+			b = Math.round(Math.random()*10);
 			a=Math.floor(desired*b);
 			desired=a/b;
 			

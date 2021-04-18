@@ -759,7 +759,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (83:4) {:else}
+    // (84:4) {:else}
     function create_else_block_1(ctx) {
     	let button;
     	let t_value = /*thelevel*/ ctx[18] + "";
@@ -771,7 +771,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			add_location(button, file, 83, 5, 1775);
+    			add_location(button, file, 84, 5, 1807);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -807,14 +807,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(83:4) {:else}",
+    		source: "(84:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:4) {#if thelevel===$level}
+    // (82:4) {#if thelevel===$level}
     function create_if_block_1(ctx) {
     	let button;
     	let t_value = /*thelevel*/ ctx[18] + "";
@@ -827,7 +827,7 @@ var app = (function () {
     			button = element("button");
     			t = text(t_value);
     			set_style(button, "color", "#e73c7e");
-    			add_location(button, file, 81, 5, 1685);
+    			add_location(button, file, 82, 5, 1717);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -852,14 +852,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(81:4) {#if thelevel===$level}",
+    		source: "(82:4) {#if thelevel===$level}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (80:4) {#each $alllevels as thelevel}
+    // (81:4) {#each $alllevels as thelevel}
     function create_each_block_1(ctx) {
     	let if_block_anchor;
 
@@ -903,14 +903,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(80:4) {#each $alllevels as thelevel}",
+    		source: "(81:4) {#each $alllevels as thelevel}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:3) {:else}
+    // (95:3) {:else}
     function create_else_block(ctx) {
     	let button;
     	let t0;
@@ -926,7 +926,7 @@ var app = (function () {
     			t0 = text("  ");
     			t1 = text(t1_value);
     			t2 = text("  ");
-    			add_location(button, file, 94, 4, 2066);
+    			add_location(button, file, 95, 4, 2098);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -964,14 +964,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(94:3) {:else}",
+    		source: "(95:3) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (92:3) {#if operation===theop}
+    // (93:3) {#if operation===theop}
     function create_if_block(ctx) {
     	let button;
     	let t0;
@@ -986,7 +986,7 @@ var app = (function () {
     			t1 = text(t1_value);
     			t2 = text("  ");
     			set_style(button, "color", "#e73c7e");
-    			add_location(button, file, 92, 4, 1978);
+    			add_location(button, file, 93, 4, 2010);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1006,14 +1006,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(92:3) {#if operation===theop}",
+    		source: "(93:3) {#if operation===theop}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (91:3) {#each $alloperations as theop}
+    // (92:3) {#each $alloperations as theop}
     function create_each_block(ctx) {
     	let if_block_anchor;
 
@@ -1057,7 +1057,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(91:3) {#each $alloperations as theop}",
+    		source: "(92:3) {#each $alloperations as theop}",
     		ctx
     	});
 
@@ -1197,31 +1197,31 @@ var app = (function () {
     			t27 = text("Falsch: ");
     			t28 = text(/*wrong*/ ctx[3]);
     			attr_dev(h1, "class", "svelte-pwom2b");
-    			add_location(h1, file, 73, 9, 1405);
-    			add_location(div0, file, 73, 4, 1400);
+    			add_location(h1, file, 74, 9, 1437);
+    			add_location(div0, file, 74, 4, 1432);
     			attr_dev(h30, "class", "svelte-pwom2b");
-    			add_location(h30, file, 75, 12, 1463);
-    			add_location(p0, file, 77, 12, 1587);
-    			add_location(p1, file, 89, 12, 1891);
-    			add_location(div1, file, 74, 8, 1445);
-    			add_location(div2, file, 99, 8, 2204);
+    			add_location(h30, file, 76, 12, 1495);
+    			add_location(p0, file, 78, 12, 1619);
+    			add_location(p1, file, 90, 12, 1923);
+    			add_location(div1, file, 75, 8, 1477);
+    			add_location(div2, file, 100, 8, 2236);
     			attr_dev(h31, "class", "svelte-pwom2b");
-    			add_location(h31, file, 104, 3, 2269);
+    			add_location(h31, file, 105, 3, 2301);
     			attr_dev(span, "class", "huge svelte-pwom2b");
-    			add_location(span, file, 105, 3, 2295);
-    			add_location(p2, file, 106, 3, 2351);
+    			add_location(span, file, 106, 3, 2327);
+    			add_location(p2, file, 107, 3, 2383);
     			attr_dev(div3, "class", "centered");
-    			add_location(div3, file, 103, 2, 2243);
+    			add_location(div3, file, 104, 2, 2275);
     			set_style(div4, "display", "flex");
     			set_style(div4, "justify-content", "space-around");
-    			add_location(div4, file, 109, 3, 2381);
+    			add_location(div4, file, 110, 3, 2413);
     			attr_dev(h32, "class", "svelte-pwom2b");
-    			add_location(h32, file, 113, 12, 2527);
-    			add_location(p3, file, 114, 3, 2552);
-    			add_location(p4, file, 115, 3, 2578);
-    			add_location(div5, file, 112, 8, 2509);
+    			add_location(h32, file, 114, 12, 2559);
+    			add_location(p3, file, 115, 3, 2584);
+    			add_location(p4, file, 116, 3, 2610);
+    			add_location(div5, file, 113, 8, 2541);
     			attr_dev(main, "class", "svelte-pwom2b");
-    			add_location(main, file, 72, 0, 1389);
+    			add_location(main, file, 73, 0, 1421);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1421,15 +1421,16 @@ var app = (function () {
     		}
 
     		if (operation == "*") {
-    			desired = Math.round(num2 / 2 + 1);
-    			$$invalidate(1, b = Math.round(num1 / 3 + 1));
-    			$$invalidate(0, a = Math.floor(desired / b));
-    			desired = a * b;
+    			num1 = Math.round(Math.random() * 10);
+    			num2 = Math.round(Math.random() * 10);
+    			desired = num1 * num2;
+    			$$invalidate(1, b = num1);
+    			$$invalidate(0, a = num2);
     		}
 
     		if (operation == ":") {
-    			desired = Math.round(num2 / 2 + 1);
-    			$$invalidate(1, b = Math.round(num1 / 3 + 1));
+    			desired = Math.round(Math.random() * 10);
+    			$$invalidate(1, b = Math.round(Math.random() * 10));
     			$$invalidate(0, a = Math.floor(desired * b));
     			desired = a / b;
     		}
