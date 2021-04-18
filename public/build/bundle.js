@@ -771,7 +771,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			add_location(button, file, 83, 5, 1747);
+    			add_location(button, file, 83, 5, 1775);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -827,7 +827,7 @@ var app = (function () {
     			button = element("button");
     			t = text(t_value);
     			set_style(button, "color", "#e73c7e");
-    			add_location(button, file, 81, 5, 1657);
+    			add_location(button, file, 81, 5, 1685);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -926,7 +926,7 @@ var app = (function () {
     			t0 = text("  ");
     			t1 = text(t1_value);
     			t2 = text("  ");
-    			add_location(button, file, 94, 4, 2038);
+    			add_location(button, file, 94, 4, 2066);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -986,7 +986,7 @@ var app = (function () {
     			t1 = text(t1_value);
     			t2 = text("  ");
     			set_style(button, "color", "#e73c7e");
-    			add_location(button, file, 92, 4, 1950);
+    			add_location(button, file, 92, 4, 1978);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1197,31 +1197,31 @@ var app = (function () {
     			t27 = text("Falsch: ");
     			t28 = text(/*wrong*/ ctx[3]);
     			attr_dev(h1, "class", "svelte-pwom2b");
-    			add_location(h1, file, 73, 9, 1377);
-    			add_location(div0, file, 73, 4, 1372);
+    			add_location(h1, file, 73, 9, 1405);
+    			add_location(div0, file, 73, 4, 1400);
     			attr_dev(h30, "class", "svelte-pwom2b");
-    			add_location(h30, file, 75, 12, 1435);
-    			add_location(p0, file, 77, 12, 1559);
-    			add_location(p1, file, 89, 12, 1863);
-    			add_location(div1, file, 74, 8, 1417);
-    			add_location(div2, file, 99, 8, 2176);
+    			add_location(h30, file, 75, 12, 1463);
+    			add_location(p0, file, 77, 12, 1587);
+    			add_location(p1, file, 89, 12, 1891);
+    			add_location(div1, file, 74, 8, 1445);
+    			add_location(div2, file, 99, 8, 2204);
     			attr_dev(h31, "class", "svelte-pwom2b");
-    			add_location(h31, file, 104, 3, 2241);
+    			add_location(h31, file, 104, 3, 2269);
     			attr_dev(span, "class", "huge svelte-pwom2b");
-    			add_location(span, file, 105, 3, 2267);
-    			add_location(p2, file, 106, 3, 2323);
+    			add_location(span, file, 105, 3, 2295);
+    			add_location(p2, file, 106, 3, 2351);
     			attr_dev(div3, "class", "centered");
-    			add_location(div3, file, 103, 2, 2215);
+    			add_location(div3, file, 103, 2, 2243);
     			set_style(div4, "display", "flex");
     			set_style(div4, "justify-content", "space-around");
-    			add_location(div4, file, 109, 3, 2353);
+    			add_location(div4, file, 109, 3, 2381);
     			attr_dev(h32, "class", "svelte-pwom2b");
-    			add_location(h32, file, 113, 12, 2499);
-    			add_location(p3, file, 114, 3, 2524);
-    			add_location(p4, file, 115, 3, 2550);
-    			add_location(div5, file, 112, 8, 2481);
+    			add_location(h32, file, 113, 12, 2527);
+    			add_location(p3, file, 114, 3, 2552);
+    			add_location(p4, file, 115, 3, 2578);
+    			add_location(div5, file, 112, 8, 2509);
     			attr_dev(main, "class", "svelte-pwom2b");
-    			add_location(main, file, 72, 0, 1361);
+    			add_location(main, file, 72, 0, 1389);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1422,14 +1422,14 @@ var app = (function () {
 
     		if (operation == "*") {
     			desired = Math.round(num2 / 2 + 1);
-    			$$invalidate(1, b = num1 + 1);
+    			$$invalidate(1, b = Math.round(num1 / 3 + 1));
     			$$invalidate(0, a = Math.floor(desired / b));
     			desired = a * b;
     		}
 
     		if (operation == ":") {
     			desired = Math.round(num2 / 2 + 1);
-    			$$invalidate(1, b = num1 + 1);
+    			$$invalidate(1, b = Math.round(num1 / 3 + 1));
     			$$invalidate(0, a = Math.floor(desired * b));
     			desired = a / b;
     		}

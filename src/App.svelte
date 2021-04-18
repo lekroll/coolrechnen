@@ -37,14 +37,14 @@
 		}
 		if (operation=="*"){
 			desired= Math.round(num2/2+1);
-			b = num1+1;
+			b = Math.round(num1/3+1);
 			a=Math.floor(desired/b);
 			desired=a*b;
 			
 		}
 		if (operation==":"){
 			desired= Math.round(num2/2+1);
-			b = num1+1;
+			b = Math.round(num1/3+1);
 			a=Math.floor(desired*b);
 			desired=a/b;
 			
