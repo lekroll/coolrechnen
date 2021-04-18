@@ -1,187 +1,257 @@
 <script>
-	import Keypad from './Keypad.svelte';
-	import Icon from 'svelte-awesome';
-	import {faRocket,faDog,faCat} from '@fortawesome/free-solid-svg-icons';
-	import {level,name,results,alllevels,alloperations} from './store.js';
-	import { onMount } from 'svelte';
-
+	import Keypad from "./Keypad.svelte";
+	import Icon from "svelte-awesome";
+	import { faRocket, faDog, faCat, faHorse,faPaw } from "@fortawesome/free-solid-svg-icons";
+	import { photos,level, name, results, alllevels, alloperations } from "./store.js";
+	import { onMount } from "svelte";
+	let settings = {};
 	let a = 1;
 	let b = 2;
 	let desired = 3;
-	let good =0;
-	let wrong=0;
-	let res ="";
-	let check ="";
+	let good = 0;
+	let wrong = 0;
+	let settingsok;
+	let showsettings;
+	let res = "";
+	let check = "";
 	let operation = "+";
-	let photos = [];
-	let topics =["spacex","cute,dog","cute,cat"];
-	let topics_icon =[faRocket,faDog,faCat];
-	let topic = topics[0];
+	let topics = ["spacex", "cute,dog", "cute,cat","cute,rabbit","horse"];
+	let topics_icon = [faRocket, faDog, faCat,faPaw,faHorse];
+	let topic;
 	onMount(async () => {
+		checksettings();
+		topic = "spacex";
 		newtask();
-		newtopic(topic);
+		newtopic();
+
 	});
 
-	async function newtopic(name){
-		let i =0;
-		photos = [];
-		while (i<10){
-			const res = await fetch(`https://loremflickr.com/640/480/`.concat(topic));
+	function settopic(thename) {
+		topic = thename;
+		newtopic();
+	}
+
+	function checksettings() {
+		settings = JSON.parse(localStorage.getItem("settings"));
+		let tempresults = JSON.parse(localStorage.getItem("results"));
+		
+		if (settings) {
+			settingsok = true;
+			level.set(settings["level"]);
+			name.set(settings["name"]);
+			topic = settings["topic"];
+		} else {
+			settingsok = false;
+		}
+		if (tempresults) {
+			results["ok"]=tempresults["ok"];
+			results["false"]=tempresults["false"];
+			good = results["ok"].length;
+			wrong = results["false"].length;
+		} else {
+			good = 0;
+			wrong = 0;
+		}
+	}
+
+	function savesetttings() {
+		settings = { level: $level, name: $name, topic: topic, level: $level };
+		localStorage.setItem("settings", JSON.stringify(settings));
+	}
+	
+	function dochangesettings(){
+		showsettings = !showsettings;
+		settingsok = true;
+	}
+	async function newtopic() {
+		let i = 0;
+		let myphotos = [];
+		while (i < 10) {
+			const res = await fetch(
+				`https://loremflickr.com/640/480/`.concat(topic)
+			);
 			let photo = await res.url;
-			photos.push(photo);
-			i = i+1;
-		}		
-		console.log(photos);
+			myphotos.push(photo);
+			i = i + 1;
+		}
+		
+		photos.set(myphotos);
+		
+		return;
+	}
 
-	};
-
-
-	function updatetask(thelevel,theoperation){
+	function updatetask(thelevel, theoperation) {
 		level.set(thelevel);
-		operation= theoperation;
+		operation = theoperation;
+		results["ok"]=[];
+		results["false"]=[];
+		localStorage.setItem("results", JSON.stringify(results));
+		wrong=0;
+		good=0;
+
 		newtask();
 	}
 
- 	function newtask(){
-		res ="";
-		let num1 = Math.round(Math.random()*$level); 
-		let num2 = Math.round(Math.random()*$level); 
-		if (operation=="+"){
-			desired= Math.max(num1,num2);
-			a = Math.min(num1,num2);
-			b=desired-a;
-			
+	function newtask() {
+		res = "";
+		let num1 = Math.round(Math.random() * $level);
+		let num2 = Math.round(Math.random() * $level);
+		if (operation == "+") {
+			desired = Math.max(num1, num2);
+			a = Math.min(num1, num2);
+			b = desired - a;
 		}
-		if (operation=="-"){
-			desired= Math.min(num1,num2);
-			b = Math.min(num1,num2);
-			a=b+desired;
-			
+		if (operation == "-") {
+			desired = Math.min(num1, num2);
+			b = Math.min(num1, num2);
+			a = b + desired;
 		}
-		if (operation=="*"){
-			num1=Math.round(Math.random()*10);
-			num2=Math.round(Math.random()*10);
-			desired= num1*num2;
+		if (operation == "x") {
+			num1 = Math.round(Math.random() * 10);
+			num2 = Math.round(Math.random() * 10);
+			desired = num1 * num2;
 			b = num1;
-			a=num2;
-			
+			a = num2;
 		}
-		if (operation==":"){
-			desired= Math.round(Math.random()*10);
-			b = Math.round(Math.random()*10);
-			a=Math.floor(desired*b);
-			desired=a/b;
-			
+		if (operation == ":") {
+			desired = Math.round(Math.random() * 10);
+			b = Math.round(Math.random() * 10);
+			a = Math.floor(desired * b);
+			desired = a / b;
 		}
-		
-	} 
-	const checkres = () => 
-		{ 
-			let check = res==desired;
+	}
+	const checkres = () => {
+		let check = res == desired;
 
-		if (check){
-			results['ok'].push({'a':a,'b':b,'operation':operation});
-			good=results['ok'].length;			
+		if (check) {
+			results["ok"].push([a, b, operation]);
+			good = results["ok"].length;
+		} else {
+			results["false"].push([a, b, operation]);
+			wrong = results["false"].length;
 		}
-		else {
-			results['false'].push({'a':a,'b':b,'operation':operation});
-			wrong=results['false'].length;
-		}
+		localStorage.setItem("results", JSON.stringify(results));
 		newtask();
-		console.log(results);
 	};
-		
-
 </script>
 
 <main>
-    <div><h1>Rechentrainer</h1>   </div>
-        <div>
-            <h3>Einstellungen</h3>
-			<p>Dein Name: <input bind:value={$name} placeholder="enter your name"> </p>  
-			<p>Bilder</p>
-			
-			{#each topics as thetopic,i}
-			<button  on:click={newtopic(thetopic)}><Icon scale="1.5"  data={topics_icon[i]}/> </button>			
-			{/each}
-			
-            <p>Schwierigkeitsgrad</p>
-			
-				{#each $alllevels as thelevel}
-				{#if thelevel===$level}
-					<button on:click={newtask()}  style="color:#e73c7e;">{thelevel}</button>
-				{:else}
-					<button  on:click={updatetask(thelevel,operation)}>{thelevel}</button>
-				{/if}
-				{/each}
-			
-		
-			
-            <p>Rechenart</p>    
-			{#each $alloperations as theop}
-			{#if operation===theop}
-				<button  style="color:#e73c7e;">&nbsp;&nbsp;{theop}&nbsp;&nbsp;</button>
-			{:else}
-				<button on:click={updatetask($level,theop)}  >&nbsp;&nbsp;{theop}&nbsp;&nbsp;</button>
+	<div>
+		<h1>
+			{#if $name !== "Test"}
+				{$name}s
 			{/if}
-			{/each}
+			Rechentrainer
+		</h1>
+		{#if (good +	wrong)>0}
+		<p>
+			{Math.round(100 * (good / (good + wrong)))}% richtig von {good +
+				wrong} Aufgaben
+		</p>
+		{/if}
+		<div class="gallery-grid">
+		{#each $photos as foto,i}
 		
-        </div>     
-        <div>
-           
+			{#if good>(i*(1+$level/10))}
 			
-        </div>
-		<div class="centered">
-			<h3>Deine Aufgabe</h3>
-			<span class="huge"> {a}{operation}{b} = {res}</span>
-			<p>{check}</p>
+			<figure class="gallery-frame">
+			  <img class="gallery-img"  src={foto} alt="" title="">			  
+			</figure>
+			{:else}
+			<div></div>
+			{/if}
+
+			
+		{/each}
 		</div>
+			
 		
-			<div style="display:flex;justify-content: space-around;">
-				<Keypad bind:value={res} on:submit={checkres} /></div>
-		
-        <div>
-            <h3>Deine Punkte</h3>
-			<p>Richtig: {good}</p>
-			<p>Falsch: {wrong}</p>
-        </div>
+	</div>
+	{#if !settingsok | showsettings}
+		<div>
+			<h3>Einstellungen</h3>
+			<p>
+				Dein Name: <input
+					bind:value={$name}
+					placeholder="enter your name"
+				/>
+			</p>
+			<p>Bilder</p>
+			{#each topics as thetopic, i}
+				<button on:click={() => settopic(thetopic)}>
+					{#if thetopic === topic}
+						<Icon
+							style="size:1.5rem;color:#e73c7e;"
+							scale="1.5"
+							data={topics_icon[i]}
+						/>
+					{:else}
+						<Icon
+							scale="1.5"
+							style="size:1.5rem;"
+							data={topics_icon[i]}
+						/>
+					{/if}
+				</button>
+			{/each}
 
+			<p>Schwierigkeitsgrad</p>
+
+			{#each $alllevels as thelevel}
+				{#if thelevel == $level}
+					<button
+						style="size:1.5rem;color:#e73c7e;"
+						on:click={() => newtask()}>{thelevel}</button
+					>
+				{:else}
+					<button on:click={() => updatetask(thelevel, operation)}
+						>{thelevel}</button
+					>
+				{/if}
+			{/each}
+
+			<p>Rechenart</p>
+			{#each $alloperations as theop}
+				{#if operation === theop}
+					<button style="color:#e73c7e;padding:.3rem;"
+						>&nbsp;&nbsp;{theop}&nbsp;&nbsp;</button
+					>
+				{:else}
+					<button
+						style={"padding:.3rem;"}
+						on:click={updatetask($level, theop)}
+						>&nbsp;&nbsp;{theop}&nbsp;&nbsp;</button
+					>
+				{/if}
+			{/each}
+		</div>
+		{#if $name!="Test"}
+		<div>
+			<button class="strongbtn" on:click={() => savesetttings()}
+				>ändern</button
+			>
+			<br>
+			<button class="strongbtn" on:click={() => dochangesettings()}
+				>schließen</button
+			>
+		</div>
+		{/if}
+	{/if}
+	{#if $name!="Test"}
+	<div class="centered">
+		<h3>Deine Aufgabe</h3>
+		<span class="huge"> {a}{operation}{b} = {res}</span>
+		<p>{check}</p>
+	</div>
+
+	<div style="display:flex;justify-content: space-around;">
+		<Keypad bind:value={res} on:submit={checkres} />
+	</div>
+	<div style="margin:3rem;">
+		<button class="strongbtn" on:click={() => dochangesettings()}
+			>Einstellungen ändern</button
+		>
+
+	</div>
+	{/if}
 </main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1,h2,h3,h4 {
-		color: white;
-		text-transform: uppercase;
-		font-weight: 100;
-		text-shadow: none;
-		
-	}
-	.huge {
-		font-size: 3rem;
-		line-height: 6rem;
-	}
-	h1 {
-		font-size: 2.0rem;
-	}
-	h2 {
-		font-size: 1.5rem;
-	}
-	h3 {
-		font-size: 1.3rem;
-	}
-
-
-/* 	
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	} */
-</style>

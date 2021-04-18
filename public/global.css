@@ -31,6 +31,36 @@ body {
 		background-position: 0% 50%;
 	}
 }
+main {
+	text-align: center;
+	padding: 1em;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+h1,h2,h3,h4 {
+	color: white;
+	text-transform: uppercase;
+	font-weight: 100;
+	text-shadow: none;
+	
+}
+h1 {
+	font-size: 2.0rem;
+}
+h2 {
+	font-size: 1.5rem;
+}
+h3 {
+	font-size: 1.3rem;
+}
+.huge {
+	font-size: 2.5rem;
+	line-height: 6rem;
+	text-shadow: -1px 0 rgb(38, 38, 38), 0 1px rgb(38, 38, 38), 1px 0 rgb(38, 38, 38), 0 -1px rgb(38, 38, 38);
+	letter-spacing: 5px;
+}
+
 
 a {
 	color: rgb(0,100,200);
@@ -80,3 +110,48 @@ button:not(:disabled):active,input:not(:disabled):active {
 }
 
 
+.strongbtn {
+	color: rgb(255, 255, 255);
+	background-color: #e73c7e;
+	border-radius: 15px;
+	padding: 10px;
+	margin: 15px;
+}
+
+.strongbtn:not(:disabled):active {
+	color:#e73c7e;
+	background-color:  rgb(255, 255, 255);
+
+}
+
+/* First the Grid */
+.gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(75px, 10fr));
+	grid-gap: 0.1rem;
+	justify-items: left;
+	margin: 0;
+	padding: 0;
+  }
+  
+  /* The Picture Frame */
+  .gallery-frame {
+	padding: .2rem;
+	border-radius: 50%;
+	height:65px;
+	width: 65px;
+	
+  }
+  
+  /* The Images */
+  .gallery-img {
+	max-width: 100%;
+	height: 100%;
+	object-fit:cover;
+	transition: opacity 0.25s ease-in-out;
+	border-radius: 50%;
+  }
+  
+  .gallery-img:hover {
+	opacity: .7;	
+  }
