@@ -2759,8 +2759,8 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (141:3) {#if $name !== "Test"}
-    function create_if_block_8(ctx) {
+    // (142:3) {#if $name !== "Test"}
+    function create_if_block_9(ctx) {
     	let t0;
     	let t1;
 
@@ -2784,17 +2784,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_8.name,
+    		id: create_if_block_9.name,
     		type: "if",
-    		source: "(141:3) {#if $name !== \\\"Test\\\"}",
+    		source: "(142:3) {#if $name !== \\\"Test\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (146:2) {#if (good + wrong)>0}
-    function create_if_block_7(ctx) {
+    // (147:2) {#if (good + wrong)>0}
+    function create_if_block_8(ctx) {
     	let p;
     	let t0_value = Math.round(100 * (/*good*/ ctx[2] / (/*good*/ ctx[2] + /*wrong*/ ctx[3]))) + "";
     	let t0;
@@ -2810,7 +2810,7 @@ var app = (function () {
     			t1 = text("% richtig von ");
     			t2 = text(t2_value);
     			t3 = text(" Aufgaben");
-    			add_location(p, file, 146, 2, 3252);
+    			add_location(p, file, 147, 2, 3273);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -2830,23 +2830,23 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_7.name,
+    		id: create_if_block_8.name,
     		type: "if",
-    		source: "(146:2) {#if (good + wrong)>0}",
+    		source: "(147:2) {#if (good + wrong)>0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (160:3) {:else}
+    // (161:3) {:else}
     function create_else_block_3(ctx) {
     	let div;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			add_location(div, file, 160, 3, 3580);
+    			add_location(div, file, 161, 3, 3601);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2861,15 +2861,15 @@ var app = (function () {
     		block,
     		id: create_else_block_3.name,
     		type: "else",
-    		source: "(160:3) {:else}",
+    		source: "(161:3) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (155:3) {#if good>(i*(1+$level/10))}
-    function create_if_block_6(ctx) {
+    // (156:3) {#if good>(i*(1+$level/10))}
+    function create_if_block_7(ctx) {
     	let figure;
     	let img;
     	let img_src_value;
@@ -2884,9 +2884,9 @@ var app = (function () {
     			if (img.src !== (img_src_value = /*foto*/ ctx[45])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
     			attr_dev(img, "title", "");
-    			add_location(img, file, 157, 5, 3494);
+    			add_location(img, file, 158, 5, 3515);
     			attr_dev(figure, "class", "gallery-frame");
-    			add_location(figure, file, 156, 3, 3458);
+    			add_location(figure, file, 157, 3, 3479);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, figure, anchor);
@@ -2905,21 +2905,21 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_6.name,
+    		id: create_if_block_7.name,
     		type: "if",
-    		source: "(155:3) {#if good>(i*(1+$level/10))}",
+    		source: "(156:3) {#if good>(i*(1+$level/10))}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (153:2) {#each $photos as foto,i}
+    // (154:2) {#each $photos as foto,i}
     function create_each_block_3(ctx) {
     	let if_block_anchor;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*good*/ ctx[2] > /*i*/ ctx[44] * (1 + /*$level*/ ctx[9] / 10)) return create_if_block_6;
+    		if (/*good*/ ctx[2] > /*i*/ ctx[44] * (1 + /*$level*/ ctx[9] / 10)) return create_if_block_7;
     		return create_else_block_3;
     	}
 
@@ -2958,14 +2958,14 @@ var app = (function () {
     		block,
     		id: create_each_block_3.name,
     		type: "each",
-    		source: "(153:2) {#each $photos as foto,i}",
+    		source: "(154:2) {#each $photos as foto,i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (170:1) {#if !settingsok | showsettings}
+    // (171:1) {#if !settingsok | showsettings}
     function create_if_block_1(ctx) {
     	let div;
     	let h3;
@@ -2983,10 +2983,11 @@ var app = (function () {
     	let p3;
     	let t11;
     	let t12;
-    	let if_block_anchor;
+    	let if_block1_anchor;
     	let current;
     	let mounted;
     	let dispose;
+    	let if_block0 = /*$name*/ ctx[10] == "Test" && create_if_block_6(ctx);
     	let each_value_2 = /*topics*/ ctx[15];
     	validate_each_argument(each_value_2);
     	let each_blocks_2 = [];
@@ -3015,7 +3016,7 @@ var app = (function () {
     		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
     	}
 
-    	let if_block = /*$name*/ ctx[10] != "Test" && create_if_block_2(ctx);
+    	let if_block1 = /*$name*/ ctx[10] != "Test" && create_if_block_2(ctx);
 
     	const block = {
     		c: function create() {
@@ -3024,7 +3025,8 @@ var app = (function () {
     			h3.textContent = "Einstellungen";
     			t1 = space();
     			p0 = element("p");
-    			t2 = text("Dein Name: ");
+    			if (if_block0) if_block0.c();
+    			t2 = text("\n\t\t\t\tDein Name: ");
     			input = element("input");
     			t3 = space();
     			p1 = element("p");
@@ -3054,22 +3056,23 @@ var app = (function () {
     			}
 
     			t12 = space();
-    			if (if_block) if_block.c();
-    			if_block_anchor = empty();
-    			add_location(h3, file, 171, 3, 3685);
+    			if (if_block1) if_block1.c();
+    			if_block1_anchor = empty();
+    			add_location(h3, file, 172, 3, 3706);
     			attr_dev(input, "placeholder", "enter your name");
-    			add_location(input, file, 173, 15, 3730);
-    			add_location(p0, file, 172, 3, 3711);
-    			add_location(p1, file, 178, 3, 3814);
-    			add_location(p2, file, 197, 3, 4201);
-    			add_location(p3, file, 212, 3, 4536);
-    			add_location(div, file, 170, 2, 3676);
+    			add_location(input, file, 177, 15, 3876);
+    			add_location(p0, file, 173, 3, 3732);
+    			add_location(p1, file, 182, 3, 3960);
+    			add_location(p2, file, 201, 3, 4347);
+    			add_location(p3, file, 216, 3, 4682);
+    			add_location(div, file, 171, 2, 3697);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, h3);
     			append_dev(div, t1);
     			append_dev(div, p0);
+    			if (if_block0) if_block0.m(p0, null);
     			append_dev(p0, t2);
     			append_dev(p0, input);
     			set_input_value(input, /*$name*/ ctx[10]);
@@ -3098,8 +3101,8 @@ var app = (function () {
     			}
 
     			insert_dev(target, t12, anchor);
-    			if (if_block) if_block.m(target, anchor);
-    			insert_dev(target, if_block_anchor, anchor);
+    			if (if_block1) if_block1.m(target, anchor);
+    			insert_dev(target, if_block1_anchor, anchor);
     			current = true;
 
     			if (!mounted) {
@@ -3108,6 +3111,17 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
+    			if (/*$name*/ ctx[10] == "Test") {
+    				if (if_block0) ; else {
+    					if_block0 = create_if_block_6(ctx);
+    					if_block0.c();
+    					if_block0.m(p0, t2);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
     			if (dirty[0] & /*$name*/ 1024 && input.value !== /*$name*/ ctx[10]) {
     				set_input_value(input, /*$name*/ ctx[10]);
     			}
@@ -3189,16 +3203,16 @@ var app = (function () {
     			}
 
     			if (/*$name*/ ctx[10] != "Test") {
-    				if (if_block) {
-    					if_block.p(ctx, dirty);
+    				if (if_block1) {
+    					if_block1.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_2(ctx);
-    					if_block.c();
-    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    					if_block1 = create_if_block_2(ctx);
+    					if_block1.c();
+    					if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
     				}
-    			} else if (if_block) {
-    				if_block.d(1);
-    				if_block = null;
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
     			}
     		},
     		i: function intro(local) {
@@ -3221,12 +3235,13 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
+    			if (if_block0) if_block0.d();
     			destroy_each(each_blocks_2, detaching);
     			destroy_each(each_blocks_1, detaching);
     			destroy_each(each_blocks, detaching);
     			if (detaching) detach_dev(t12);
-    			if (if_block) if_block.d(detaching);
-    			if (detaching) detach_dev(if_block_anchor);
+    			if (if_block1) if_block1.d(detaching);
+    			if (detaching) detach_dev(if_block1_anchor);
     			mounted = false;
     			dispose();
     		}
@@ -3236,14 +3251,53 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(170:1) {#if !settingsok | showsettings}",
+    		source: "(171:1) {#if !settingsok | showsettings}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (188:5) {:else}
+    // (175:4) {#if $name=='Test'}
+    function create_if_block_6(ctx) {
+    	let strong;
+    	let br0;
+    	let br1;
+
+    	const block = {
+    		c: function create() {
+    			strong = element("strong");
+    			strong.textContent = "Bitte ändere Deinen Namen und wähle eine Schwierigkeitsstufe!";
+    			br0 = element("br");
+    			br1 = element("br");
+    			add_location(strong, file, 175, 4, 3764);
+    			add_location(br0, file, 175, 82, 3842);
+    			add_location(br1, file, 175, 86, 3846);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, strong, anchor);
+    			insert_dev(target, br0, anchor);
+    			insert_dev(target, br1, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(strong);
+    			if (detaching) detach_dev(br0);
+    			if (detaching) detach_dev(br1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_6.name,
+    		type: "if",
+    		source: "(175:4) {#if $name=='Test'}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (192:5) {:else}
     function create_else_block_2(ctx) {
     	let icon;
     	let current;
@@ -3284,14 +3338,14 @@ var app = (function () {
     		block,
     		id: create_else_block_2.name,
     		type: "else",
-    		source: "(188:5) {:else}",
+    		source: "(192:5) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (182:5) {#if thetopic === topic}
+    // (186:5) {#if thetopic === topic}
     function create_if_block_5(ctx) {
     	let icon;
     	let current;
@@ -3332,14 +3386,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5.name,
     		type: "if",
-    		source: "(182:5) {#if thetopic === topic}",
+    		source: "(186:5) {#if thetopic === topic}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (180:3) {#each topics as thetopic, i}
+    // (184:3) {#each topics as thetopic, i}
     function create_each_block_2(ctx) {
     	let button;
     	let current_block_type_index;
@@ -3366,7 +3420,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			if_block.c();
-    			add_location(button, file, 180, 4, 3865);
+    			add_location(button, file, 184, 4, 4011);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3427,14 +3481,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(180:3) {#each topics as thetopic, i}",
+    		source: "(184:3) {#each topics as thetopic, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (206:4) {:else}
+    // (210:4) {:else}
     function create_else_block_1(ctx) {
     	let button;
     	let t_value = /*thelevel*/ ctx[39] + "";
@@ -3450,7 +3504,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			add_location(button, file, 206, 5, 4421);
+    			add_location(button, file, 210, 5, 4567);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3476,14 +3530,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(206:4) {:else}",
+    		source: "(210:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (201:4) {#if thelevel == $level}
+    // (205:4) {#if thelevel == $level}
     function create_if_block_4(ctx) {
     	let button;
     	let t_value = /*thelevel*/ ctx[39] + "";
@@ -3497,7 +3551,7 @@ var app = (function () {
     			t = text(t_value);
     			set_style(button, "size", "1.5rem");
     			set_style(button, "color", "#e73c7e");
-    			add_location(button, file, 201, 5, 4296);
+    			add_location(button, file, 205, 5, 4442);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3522,14 +3576,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(201:4) {#if thelevel == $level}",
+    		source: "(205:4) {#if thelevel == $level}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (200:3) {#each $alllevels as thelevel}
+    // (204:3) {#each $alllevels as thelevel}
     function create_each_block_1(ctx) {
     	let if_block_anchor;
 
@@ -3573,14 +3627,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(200:3) {#each $alllevels as thelevel}",
+    		source: "(204:3) {#each $alllevels as thelevel}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (219:4) {:else}
+    // (223:4) {:else}
     function create_else_block(ctx) {
     	let button;
     	let t0;
@@ -3597,7 +3651,7 @@ var app = (function () {
     			t1 = text(t1_value);
     			t2 = text("  ");
     			attr_dev(button, "style", "padding:.3rem;");
-    			add_location(button, file, 219, 5, 4739);
+    			add_location(button, file, 223, 5, 4885);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3635,14 +3689,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(219:4) {:else}",
+    		source: "(223:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (215:4) {#if operation === theop}
+    // (219:4) {#if operation === theop}
     function create_if_block_3(ctx) {
     	let button;
     	let t0;
@@ -3658,7 +3712,7 @@ var app = (function () {
     			t2 = text("  ");
     			set_style(button, "color", "#e73c7e");
     			set_style(button, "padding", ".3rem");
-    			add_location(button, file, 215, 5, 4623);
+    			add_location(button, file, 219, 5, 4769);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3678,14 +3732,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(215:4) {#if operation === theop}",
+    		source: "(219:4) {#if operation === theop}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (214:3) {#each $alloperations as theop}
+    // (218:3) {#each $alloperations as theop}
     function create_each_block(ctx) {
     	let if_block_anchor;
 
@@ -3729,14 +3783,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(214:3) {#each $alloperations as theop}",
+    		source: "(218:3) {#each $alloperations as theop}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (228:2) {#if $name!="Test"}
+    // (232:2) {#if $name!="Test"}
     function create_if_block_2(ctx) {
     	let div;
     	let button0;
@@ -3758,11 +3812,11 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "schließen";
     			attr_dev(button0, "class", "strongbtn");
-    			add_location(button0, file, 229, 3, 4938);
-    			add_location(br, file, 232, 3, 5025);
+    			add_location(button0, file, 233, 3, 5084);
+    			add_location(br, file, 236, 3, 5171);
     			attr_dev(button1, "class", "strongbtn");
-    			add_location(button1, file, 233, 3, 5033);
-    			add_location(div, file, 228, 2, 4929);
+    			add_location(button1, file, 237, 3, 5179);
+    			add_location(div, file, 232, 2, 5075);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3793,14 +3847,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(228:2) {#if $name!=\\\"Test\\\"}",
+    		source: "(232:2) {#if $name!=\\\"Test\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (240:1) {#if $name!="Test"}
+    // (244:1) {#if $name!="Test"}
     function create_if_block(ctx) {
     	let div0;
     	let h3;
@@ -3860,19 +3914,19 @@ var app = (function () {
     			div2 = element("div");
     			button = element("button");
     			button.textContent = "Einstellungen ändern";
-    			add_location(h3, file, 241, 2, 5194);
+    			add_location(h3, file, 245, 2, 5340);
     			attr_dev(span, "class", "huge");
-    			add_location(span, file, 242, 2, 5219);
-    			add_location(p, file, 243, 2, 5274);
+    			add_location(span, file, 246, 2, 5365);
+    			add_location(p, file, 247, 2, 5420);
     			attr_dev(div0, "class", "centered");
-    			add_location(div0, file, 240, 1, 5169);
+    			add_location(div0, file, 244, 1, 5315);
     			set_style(div1, "display", "flex");
     			set_style(div1, "justify-content", "space-around");
-    			add_location(div1, file, 246, 1, 5299);
+    			add_location(div1, file, 250, 1, 5445);
     			attr_dev(button, "class", "strongbtn");
-    			add_location(button, file, 250, 2, 5446);
+    			add_location(button, file, 254, 2, 5592);
     			set_style(div2, "margin", "3rem");
-    			add_location(div2, file, 249, 1, 5417);
+    			add_location(div2, file, 253, 1, 5563);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -3939,7 +3993,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(240:1) {#if $name!=\\\"Test\\\"}",
+    		source: "(244:1) {#if $name!=\\\"Test\\\"}",
     		ctx
     	});
 
@@ -3957,8 +4011,8 @@ var app = (function () {
     	let t3;
     	let t4;
     	let current;
-    	let if_block0 = /*$name*/ ctx[10] !== "Test" && create_if_block_8(ctx);
-    	let if_block1 = /*good*/ ctx[2] + /*wrong*/ ctx[3] > 0 && create_if_block_7(ctx);
+    	let if_block0 = /*$name*/ ctx[10] !== "Test" && create_if_block_9(ctx);
+    	let if_block1 = /*good*/ ctx[2] + /*wrong*/ ctx[3] > 0 && create_if_block_8(ctx);
     	let each_value_3 = /*$photos*/ ctx[11];
     	validate_each_argument(each_value_3);
     	let each_blocks = [];
@@ -3990,11 +4044,11 @@ var app = (function () {
     			if (if_block2) if_block2.c();
     			t4 = space();
     			if (if_block3) if_block3.c();
-    			add_location(h1, file, 139, 2, 3147);
+    			add_location(h1, file, 140, 2, 3168);
     			attr_dev(div0, "class", "gallery-grid");
-    			add_location(div0, file, 151, 2, 3361);
-    			add_location(div1, file, 138, 1, 3139);
-    			add_location(main, file, 137, 0, 3131);
+    			add_location(div0, file, 152, 2, 3382);
+    			add_location(div1, file, 139, 1, 3160);
+    			add_location(main, file, 138, 0, 3152);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4025,7 +4079,7 @@ var app = (function () {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
-    					if_block0 = create_if_block_8(ctx);
+    					if_block0 = create_if_block_9(ctx);
     					if_block0.c();
     					if_block0.m(h1, t0);
     				}
@@ -4038,7 +4092,7 @@ var app = (function () {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
-    					if_block1 = create_if_block_7(ctx);
+    					if_block1 = create_if_block_8(ctx);
     					if_block1.c();
     					if_block1.m(div1, t2);
     				}
@@ -4219,6 +4273,8 @@ var app = (function () {
     	}
 
     	function savesetttings() {
+    		$$invalidate(4, settingsok = true);
+
     		settings = {
     			level: $level,
     			name: $name,

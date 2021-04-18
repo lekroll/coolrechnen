@@ -55,6 +55,7 @@
 	}
 
 	function savesetttings() {
+		settingsok = true;
 		settings = { level: $level, name: $name, topic: topic, level: $level };
 		localStorage.setItem("settings", JSON.stringify(settings));
 	}
@@ -171,6 +172,9 @@
 		<div>
 			<h3>Einstellungen</h3>
 			<p>
+				{#if $name=='Test'}
+				<strong>Bitte ändere Deinen Namen und wähle eine Schwierigkeitsstufe!</strong><br><br>
+				{/if}
 				Dein Name: <input
 					bind:value={$name}
 					placeholder="enter your name"
