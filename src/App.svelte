@@ -1,5 +1,7 @@
 <script>
 	import Keypad from './Keypad.svelte';
+	import Icon from 'svelte-awesome';
+	import {faRocket,faDog,faCat} from '@fortawesome/free-solid-svg-icons';
 	import {level,name,results,alllevels,alloperations} from './store.js';
 	import { onMount } from 'svelte';
 
@@ -11,7 +13,28 @@
 	let res ="";
 	let check ="";
 	let operation = "+";
-	onMount(async => {newtask();});
+	let photos = [];
+	let topics =["spacex","cute,dog","cute,cat"];
+	let topics_icon =[faRocket,faDog,faCat];
+	let topic = topics[0];
+	onMount(async () => {
+		newtask();
+		newtopic(topic);
+	});
+
+	async function newtopic(name){
+		let i =0;
+		photos = [];
+		while (i<10){
+			const res = await fetch(`https://loremflickr.com/640/480/`.concat(topic));
+			let photo = await res.url;
+			photos.push(photo);
+			i = i+1;
+		}		
+		console.log(photos);
+
+	};
+
 
 	function updatetask(thelevel,theoperation){
 		level.set(thelevel);
@@ -75,7 +98,13 @@
     <div><h1>Rechentrainer</h1>   </div>
         <div>
             <h3>Einstellungen</h3>
-			<!-- <p>Dein Name: <input bind:value={$name} placeholder="enter your name"> </p>  -->
+			<p>Dein Name: <input bind:value={$name} placeholder="enter your name"> </p>  
+			<p>Bilder</p>
+			
+			{#each topics as thetopic,i}
+			<button  on:click={newtopic(thetopic)}><Icon scale="1.5"  data={topics_icon[i]}/> </button>			
+			{/each}
+			
             <p>Schwierigkeitsgrad</p>
 			
 				{#each $alllevels as thelevel}
