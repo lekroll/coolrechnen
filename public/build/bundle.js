@@ -2810,7 +2810,7 @@ var app = (function () {
     			t1 = text("% richtig von ");
     			t2 = text(t2_value);
     			t3 = text(" Aufgaben");
-    			add_location(p, file, 147, 2, 3273);
+    			add_location(p, file, 147, 2, 3274);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -2846,7 +2846,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div = element("div");
-    			add_location(div, file, 161, 3, 3601);
+    			add_location(div, file, 161, 3, 3602);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2884,9 +2884,9 @@ var app = (function () {
     			if (img.src !== (img_src_value = /*foto*/ ctx[45])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
     			attr_dev(img, "title", "");
-    			add_location(img, file, 158, 5, 3515);
+    			add_location(img, file, 158, 5, 3516);
     			attr_dev(figure, "class", "gallery-frame");
-    			add_location(figure, file, 157, 3, 3479);
+    			add_location(figure, file, 157, 3, 3480);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, figure, anchor);
@@ -3058,14 +3058,14 @@ var app = (function () {
     			t12 = space();
     			if (if_block1) if_block1.c();
     			if_block1_anchor = empty();
-    			add_location(h3, file, 172, 3, 3706);
+    			add_location(h3, file, 172, 3, 3707);
     			attr_dev(input, "placeholder", "enter your name");
-    			add_location(input, file, 177, 15, 3876);
-    			add_location(p0, file, 173, 3, 3732);
-    			add_location(p1, file, 182, 3, 3960);
-    			add_location(p2, file, 201, 3, 4347);
-    			add_location(p3, file, 216, 3, 4682);
-    			add_location(div, file, 171, 2, 3697);
+    			add_location(input, file, 177, 15, 3877);
+    			add_location(p0, file, 173, 3, 3733);
+    			add_location(p1, file, 182, 3, 3961);
+    			add_location(p2, file, 201, 3, 4348);
+    			add_location(p3, file, 216, 3, 4683);
+    			add_location(div, file, 171, 2, 3698);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3270,9 +3270,9 @@ var app = (function () {
     			strong.textContent = "Bitte ändere Deinen Namen und wähle eine Schwierigkeitsstufe!";
     			br0 = element("br");
     			br1 = element("br");
-    			add_location(strong, file, 175, 4, 3764);
-    			add_location(br0, file, 175, 82, 3842);
-    			add_location(br1, file, 175, 86, 3846);
+    			add_location(strong, file, 175, 4, 3765);
+    			add_location(br0, file, 175, 82, 3843);
+    			add_location(br1, file, 175, 86, 3847);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, strong, anchor);
@@ -3420,7 +3420,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			if_block.c();
-    			add_location(button, file, 184, 4, 4011);
+    			add_location(button, file, 184, 4, 4012);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3504,7 +3504,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			add_location(button, file, 210, 5, 4567);
+    			add_location(button, file, 210, 5, 4568);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3551,7 +3551,7 @@ var app = (function () {
     			t = text(t_value);
     			set_style(button, "size", "1.5rem");
     			set_style(button, "color", "#e73c7e");
-    			add_location(button, file, 205, 5, 4442);
+    			add_location(button, file, 205, 5, 4443);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3651,7 +3651,7 @@ var app = (function () {
     			t1 = text(t1_value);
     			t2 = text("  ");
     			attr_dev(button, "style", "padding:.3rem;");
-    			add_location(button, file, 223, 5, 4885);
+    			add_location(button, file, 223, 5, 4886);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3712,7 +3712,7 @@ var app = (function () {
     			t2 = text("  ");
     			set_style(button, "color", "#e73c7e");
     			set_style(button, "padding", ".3rem");
-    			add_location(button, file, 219, 5, 4769);
+    			add_location(button, file, 219, 5, 4770);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3812,11 +3812,11 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "schließen";
     			attr_dev(button0, "class", "strongbtn");
-    			add_location(button0, file, 233, 3, 5084);
-    			add_location(br, file, 236, 3, 5171);
+    			add_location(button0, file, 233, 3, 5085);
+    			add_location(br, file, 236, 3, 5172);
     			attr_dev(button1, "class", "strongbtn");
-    			add_location(button1, file, 237, 3, 5179);
-    			add_location(div, file, 232, 2, 5075);
+    			add_location(button1, file, 237, 3, 5180);
+    			add_location(div, file, 232, 2, 5076);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3914,19 +3914,19 @@ var app = (function () {
     			div2 = element("div");
     			button = element("button");
     			button.textContent = "Einstellungen ändern";
-    			add_location(h3, file, 245, 2, 5340);
+    			add_location(h3, file, 245, 2, 5341);
     			attr_dev(span, "class", "huge");
-    			add_location(span, file, 246, 2, 5365);
-    			add_location(p, file, 247, 2, 5420);
+    			add_location(span, file, 246, 2, 5366);
+    			add_location(p, file, 247, 2, 5421);
     			attr_dev(div0, "class", "centered");
-    			add_location(div0, file, 244, 1, 5315);
+    			add_location(div0, file, 244, 1, 5316);
     			set_style(div1, "display", "flex");
     			set_style(div1, "justify-content", "space-around");
-    			add_location(div1, file, 250, 1, 5445);
+    			add_location(div1, file, 250, 1, 5446);
     			attr_dev(button, "class", "strongbtn");
-    			add_location(button, file, 254, 2, 5592);
+    			add_location(button, file, 254, 2, 5593);
     			set_style(div2, "margin", "3rem");
-    			add_location(div2, file, 253, 1, 5563);
+    			add_location(div2, file, 253, 1, 5564);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -4044,11 +4044,11 @@ var app = (function () {
     			if (if_block2) if_block2.c();
     			t4 = space();
     			if (if_block3) if_block3.c();
-    			add_location(h1, file, 140, 2, 3168);
+    			add_location(h1, file, 140, 2, 3169);
     			attr_dev(div0, "class", "gallery-grid");
-    			add_location(div0, file, 152, 2, 3382);
-    			add_location(div1, file, 139, 1, 3160);
-    			add_location(main, file, 138, 0, 3152);
+    			add_location(div0, file, 152, 2, 3383);
+    			add_location(div1, file, 139, 1, 3161);
+    			add_location(main, file, 138, 0, 3153);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4238,7 +4238,6 @@ var app = (function () {
 
     	onMount(async () => {
     		checksettings();
-    		$$invalidate(8, topic = "spacex");
     		newtask();
     		newtopic();
     	});
@@ -4259,6 +4258,7 @@ var app = (function () {
     			$$invalidate(8, topic = settings["topic"]);
     		} else {
     			$$invalidate(4, settingsok = false);
+    			$$invalidate(8, topic = "spacex");
     		}
 
     		if (tempresults) {

@@ -20,7 +20,6 @@
 	let topic;
 	onMount(async () => {
 		checksettings();
-		topic = "spacex";
 		newtask();
 		newtopic();
 
@@ -42,6 +41,7 @@
 			topic = settings["topic"];
 		} else {
 			settingsok = false;
+			topic = "spacex";
 		}
 		if (tempresults) {
 			results["ok"]=tempresults["ok"];
