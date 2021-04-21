@@ -2644,6 +2644,11 @@ var app = (function () {
       iconName: 'dog',
       icon: [576, 512, [], "f6d3", "M298.06,224,448,277.55V496a16,16,0,0,1-16,16H368a16,16,0,0,1-16-16V384H192V496a16,16,0,0,1-16,16H112a16,16,0,0,1-16-16V282.09C58.84,268.84,32,233.66,32,192a32,32,0,0,1,64,0,32.06,32.06,0,0,0,32,32ZM544,112v32a64,64,0,0,1-64,64H448v35.58L320,197.87V48c0-14.25,17.22-21.39,27.31-11.31L374.59,64h53.63c10.91,0,23.75,7.92,28.62,17.69L464,96h64A16,16,0,0,1,544,112Zm-112,0a16,16,0,1,0-16,16A16,16,0,0,0,432,112Z"]
     };
+    var faFrown = {
+      prefix: 'fas',
+      iconName: 'frown',
+      icon: [496, 512, [], "f119", "M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm80 168c17.7 0 32 14.3 32 32s-14.3 32-32 32-32-14.3-32-32 14.3-32 32-32zm-160 0c17.7 0 32 14.3 32 32s-14.3 32-32 32-32-14.3-32-32 14.3-32 32-32zm170.2 218.2C315.8 367.4 282.9 352 248 352s-67.8 15.4-90.2 42.2c-13.5 16.3-38.1-4.2-24.6-20.5C161.7 339.6 203.6 320 248 320s86.3 19.6 114.7 53.8c13.6 16.2-11 36.7-24.5 20.4z"]
+    };
     var faHorse = {
       prefix: 'fas',
       iconName: 'horse',
@@ -2658,6 +2663,11 @@ var app = (function () {
       prefix: 'fas',
       iconName: 'rocket',
       icon: [512, 512, [], "f135", "M505.12019,19.09375c-1.18945-5.53125-6.65819-11-12.207-12.1875C460.716,0,435.507,0,410.40747,0,307.17523,0,245.26909,55.20312,199.05238,128H94.83772c-16.34763.01562-35.55658,11.875-42.88664,26.48438L2.51562,253.29688A28.4,28.4,0,0,0,0,264a24.00867,24.00867,0,0,0,24.00582,24H127.81618l-22.47457,22.46875c-11.36521,11.36133-12.99607,32.25781,0,45.25L156.24582,406.625c11.15623,11.1875,32.15619,13.15625,45.27726,0l22.47457-22.46875V488a24.00867,24.00867,0,0,0,24.00581,24,28.55934,28.55934,0,0,0,10.707-2.51562l98.72834-49.39063c14.62888-7.29687,26.50776-26.5,26.50776-42.85937V312.79688c72.59753-46.3125,128.03493-108.40626,128.03493-211.09376C512.07526,76.5,512.07526,51.29688,505.12019,19.09375ZM384.04033,168A40,40,0,1,1,424.05,128,40.02322,40.02322,0,0,1,384.04033,168Z"]
+    };
+    var faSmile = {
+      prefix: 'fas',
+      iconName: 'smile',
+      icon: [496, 512, [], "f118", "M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm80 168c17.7 0 32 14.3 32 32s-14.3 32-32 32-32-14.3-32-32 14.3-32 32-32zm-160 0c17.7 0 32 14.3 32 32s-14.3 32-32 32-32-14.3-32-32 14.3-32 32-32zm194.8 170.2C334.3 380.4 292.5 400 248 400s-86.3-19.6-114.8-53.8c-13.6-16.3 11-36.7 24.6-20.5 22.4 26.9 55.2 42.2 90.2 42.2s67.8-15.4 90.2-42.2c13.4-16.2 38.1 4.2 24.6 20.5z"]
     };
 
     const subscriber_queue = [];
@@ -2759,14 +2769,14 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (142:3) {#if $name !== "Test"}
-    function create_if_block_9(ctx) {
+    // (143:3) {#if $name !== "Test"}
+    function create_if_block_11(ctx) {
     	let t0;
     	let t1;
 
     	const block = {
     		c: function create() {
-    			t0 = text(/*$name*/ ctx[10]);
+    			t0 = text(/*$name*/ ctx[12]);
     			t1 = text("s");
     		},
     		m: function mount(target, anchor) {
@@ -2774,7 +2784,7 @@ var app = (function () {
     			insert_dev(target, t1, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*$name*/ 1024) set_data_dev(t0, /*$name*/ ctx[10]);
+    			if (dirty[0] & /*$name*/ 4096) set_data_dev(t0, /*$name*/ ctx[12]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(t0);
@@ -2784,22 +2794,22 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_9.name,
+    		id: create_if_block_11.name,
     		type: "if",
-    		source: "(142:3) {#if $name !== \\\"Test\\\"}",
+    		source: "(143:3) {#if $name !== \\\"Test\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (147:2) {#if (good + wrong)>0}
-    function create_if_block_8(ctx) {
+    // (148:2) {#if (good + wrong)>0}
+    function create_if_block_10(ctx) {
     	let p;
-    	let t0_value = Math.round(100 * (/*good*/ ctx[2] / (/*good*/ ctx[2] + /*wrong*/ ctx[3]))) + "";
+    	let t0_value = Math.round(100 * (/*good*/ ctx[3] / (/*good*/ ctx[3] + /*wrong*/ ctx[4]))) + "";
     	let t0;
     	let t1;
-    	let t2_value = /*good*/ ctx[2] + /*wrong*/ ctx[3] + "";
+    	let t2_value = /*good*/ ctx[3] + /*wrong*/ ctx[4] + "";
     	let t2;
     	let t3;
 
@@ -2810,7 +2820,7 @@ var app = (function () {
     			t1 = text("% richtig von ");
     			t2 = text(t2_value);
     			t3 = text(" Aufgaben");
-    			add_location(p, file, 147, 2, 3274);
+    			add_location(p, file, 148, 2, 3359);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -2820,8 +2830,8 @@ var app = (function () {
     			append_dev(p, t3);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*good, wrong*/ 12 && t0_value !== (t0_value = Math.round(100 * (/*good*/ ctx[2] / (/*good*/ ctx[2] + /*wrong*/ ctx[3]))) + "")) set_data_dev(t0, t0_value);
-    			if (dirty[0] & /*good, wrong*/ 12 && t2_value !== (t2_value = /*good*/ ctx[2] + /*wrong*/ ctx[3] + "")) set_data_dev(t2, t2_value);
+    			if (dirty[0] & /*good, wrong*/ 24 && t0_value !== (t0_value = Math.round(100 * (/*good*/ ctx[3] / (/*good*/ ctx[3] + /*wrong*/ ctx[4]))) + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*good, wrong*/ 24 && t2_value !== (t2_value = /*good*/ ctx[3] + /*wrong*/ ctx[4] + "")) set_data_dev(t2, t2_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(p);
@@ -2830,23 +2840,23 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_8.name,
+    		id: create_if_block_10.name,
     		type: "if",
-    		source: "(147:2) {#if (good + wrong)>0}",
+    		source: "(148:2) {#if (good + wrong)>0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (161:3) {:else}
-    function create_else_block_3(ctx) {
+    // (162:3) {:else}
+    function create_else_block_4(ctx) {
     	let div;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			add_location(div, file, 161, 3, 3602);
+    			add_location(div, file, 162, 3, 3687);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2859,17 +2869,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_3.name,
+    		id: create_else_block_4.name,
     		type: "else",
-    		source: "(161:3) {:else}",
+    		source: "(162:3) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (156:3) {#if good>(i*(1+$level/10))}
-    function create_if_block_7(ctx) {
+    // (157:3) {#if good>(i*(1+$level/10))}
+    function create_if_block_9(ctx) {
     	let figure;
     	let img;
     	let img_src_value;
@@ -2884,9 +2894,9 @@ var app = (function () {
     			if (img.src !== (img_src_value = /*foto*/ ctx[45])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
     			attr_dev(img, "title", "");
-    			add_location(img, file, 158, 5, 3516);
+    			add_location(img, file, 159, 5, 3601);
     			attr_dev(figure, "class", "gallery-frame");
-    			add_location(figure, file, 157, 3, 3480);
+    			add_location(figure, file, 158, 3, 3565);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, figure, anchor);
@@ -2894,7 +2904,7 @@ var app = (function () {
     			append_dev(figure, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*$photos*/ 2048 && img.src !== (img_src_value = /*foto*/ ctx[45])) {
+    			if (dirty[0] & /*$photos*/ 8192 && img.src !== (img_src_value = /*foto*/ ctx[45])) {
     				attr_dev(img, "src", img_src_value);
     			}
     		},
@@ -2905,22 +2915,22 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_7.name,
+    		id: create_if_block_9.name,
     		type: "if",
-    		source: "(156:3) {#if good>(i*(1+$level/10))}",
+    		source: "(157:3) {#if good>(i*(1+$level/10))}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (154:2) {#each $photos as foto,i}
+    // (155:2) {#each $photos as foto,i}
     function create_each_block_3(ctx) {
     	let if_block_anchor;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*good*/ ctx[2] > /*i*/ ctx[44] * (1 + /*$level*/ ctx[9] / 10)) return create_if_block_7;
-    		return create_else_block_3;
+    		if (/*good*/ ctx[3] > /*i*/ ctx[44] * (1 + /*$level*/ ctx[11] / 10)) return create_if_block_9;
+    		return create_else_block_4;
     	}
 
     	let current_block_type = select_block_type(ctx);
@@ -2958,15 +2968,15 @@ var app = (function () {
     		block,
     		id: create_each_block_3.name,
     		type: "each",
-    		source: "(154:2) {#each $photos as foto,i}",
+    		source: "(155:2) {#each $photos as foto,i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (171:1) {#if !settingsok | showsettings}
-    function create_if_block_1(ctx) {
+    // (172:1) {#if !settingsok | showsettings}
+    function create_if_block_3(ctx) {
     	let div;
     	let h3;
     	let t1;
@@ -2987,8 +2997,8 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block0 = /*$name*/ ctx[10] == "Test" && create_if_block_6(ctx);
-    	let each_value_2 = /*topics*/ ctx[15];
+    	let if_block0 = /*$name*/ ctx[12] == "Test" && create_if_block_8(ctx);
+    	let each_value_2 = /*topics*/ ctx[16];
     	validate_each_argument(each_value_2);
     	let each_blocks_2 = [];
 
@@ -3000,7 +3010,7 @@ var app = (function () {
     		each_blocks_2[i] = null;
     	});
 
-    	let each_value_1 = /*$alllevels*/ ctx[12];
+    	let each_value_1 = /*$alllevels*/ ctx[14];
     	validate_each_argument(each_value_1);
     	let each_blocks_1 = [];
 
@@ -3008,7 +3018,7 @@ var app = (function () {
     		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
     	}
 
-    	let each_value = /*$alloperations*/ ctx[13];
+    	let each_value = /*$alloperations*/ ctx[15];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -3016,7 +3026,7 @@ var app = (function () {
     		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
     	}
 
-    	let if_block1 = /*$name*/ ctx[10] != "Test" && create_if_block_2(ctx);
+    	let if_block1 = /*$name*/ ctx[12] != "Test" && create_if_block_4(ctx);
 
     	const block = {
     		c: function create() {
@@ -3058,14 +3068,14 @@ var app = (function () {
     			t12 = space();
     			if (if_block1) if_block1.c();
     			if_block1_anchor = empty();
-    			add_location(h3, file, 172, 3, 3707);
+    			add_location(h3, file, 173, 3, 3792);
     			attr_dev(input, "placeholder", "enter your name");
-    			add_location(input, file, 177, 15, 3877);
-    			add_location(p0, file, 173, 3, 3733);
-    			add_location(p1, file, 182, 3, 3961);
-    			add_location(p2, file, 201, 3, 4348);
-    			add_location(p3, file, 216, 3, 4683);
-    			add_location(div, file, 171, 2, 3698);
+    			add_location(input, file, 178, 15, 3962);
+    			add_location(p0, file, 174, 3, 3818);
+    			add_location(p1, file, 183, 3, 4046);
+    			add_location(p2, file, 202, 3, 4433);
+    			add_location(p3, file, 217, 3, 4768);
+    			add_location(div, file, 172, 2, 3783);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3075,7 +3085,7 @@ var app = (function () {
     			if (if_block0) if_block0.m(p0, null);
     			append_dev(p0, t2);
     			append_dev(p0, input);
-    			set_input_value(input, /*$name*/ ctx[10]);
+    			set_input_value(input, /*$name*/ ctx[12]);
     			append_dev(div, t3);
     			append_dev(div, p1);
     			append_dev(div, t5);
@@ -3106,14 +3116,14 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(input, "input", /*input_input_handler*/ ctx[23]);
+    				dispose = listen_dev(input, "input", /*input_input_handler*/ ctx[24]);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (/*$name*/ ctx[10] == "Test") {
+    			if (/*$name*/ ctx[12] == "Test") {
     				if (if_block0) ; else {
-    					if_block0 = create_if_block_6(ctx);
+    					if_block0 = create_if_block_8(ctx);
     					if_block0.c();
     					if_block0.m(p0, t2);
     				}
@@ -3122,12 +3132,12 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (dirty[0] & /*$name*/ 1024 && input.value !== /*$name*/ ctx[10]) {
-    				set_input_value(input, /*$name*/ ctx[10]);
+    			if (dirty[0] & /*$name*/ 4096 && input.value !== /*$name*/ ctx[12]) {
+    				set_input_value(input, /*$name*/ ctx[12]);
     			}
 
-    			if (dirty[0] & /*settopic, topics, topics_icon, topic*/ 229632) {
-    				each_value_2 = /*topics*/ ctx[15];
+    			if (dirty[0] & /*settopic, topics, topics_icon, topic*/ 459776) {
+    				each_value_2 = /*topics*/ ctx[16];
     				validate_each_argument(each_value_2);
     				let i;
 
@@ -3154,8 +3164,8 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (dirty[0] & /*newtask, $alllevels, $level, updatetask, operation*/ 3150464) {
-    				each_value_1 = /*$alllevels*/ ctx[12];
+    			if (dirty[0] & /*newtask, $alllevels, $level, updatetask, operation*/ 6310400) {
+    				each_value_1 = /*$alllevels*/ ctx[14];
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -3178,8 +3188,8 @@ var app = (function () {
     				each_blocks_1.length = each_value_1.length;
     			}
 
-    			if (dirty[0] & /*$alloperations, operation, updatetask, $level*/ 1057408) {
-    				each_value = /*$alloperations*/ ctx[13];
+    			if (dirty[0] & /*$alloperations, operation, updatetask, $level*/ 2132480) {
+    				each_value = /*$alloperations*/ ctx[15];
     				validate_each_argument(each_value);
     				let i;
 
@@ -3202,11 +3212,11 @@ var app = (function () {
     				each_blocks.length = each_value.length;
     			}
 
-    			if (/*$name*/ ctx[10] != "Test") {
+    			if (/*$name*/ ctx[12] != "Test") {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
-    					if_block1 = create_if_block_2(ctx);
+    					if_block1 = create_if_block_4(ctx);
     					if_block1.c();
     					if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
     				}
@@ -3249,17 +3259,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1.name,
+    		id: create_if_block_3.name,
     		type: "if",
-    		source: "(171:1) {#if !settingsok | showsettings}",
+    		source: "(172:1) {#if !settingsok | showsettings}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (175:4) {#if $name=='Test'}
-    function create_if_block_6(ctx) {
+    // (176:4) {#if $name=='Test'}
+    function create_if_block_8(ctx) {
     	let strong;
     	let br0;
     	let br1;
@@ -3270,9 +3280,9 @@ var app = (function () {
     			strong.textContent = "Bitte ändere Deinen Namen und wähle eine Schwierigkeitsstufe!";
     			br0 = element("br");
     			br1 = element("br");
-    			add_location(strong, file, 175, 4, 3765);
-    			add_location(br0, file, 175, 82, 3843);
-    			add_location(br1, file, 175, 86, 3847);
+    			add_location(strong, file, 176, 4, 3850);
+    			add_location(br0, file, 176, 82, 3928);
+    			add_location(br1, file, 176, 86, 3932);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, strong, anchor);
@@ -3288,17 +3298,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_6.name,
+    		id: create_if_block_8.name,
     		type: "if",
-    		source: "(175:4) {#if $name=='Test'}",
+    		source: "(176:4) {#if $name=='Test'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (192:5) {:else}
-    function create_else_block_2(ctx) {
+    // (193:5) {:else}
+    function create_else_block_3(ctx) {
     	let icon;
     	let current;
 
@@ -3306,7 +3316,7 @@ var app = (function () {
     			props: {
     				scale: "1.5",
     				style: "size:1.5rem;",
-    				data: /*topics_icon*/ ctx[16][/*i*/ ctx[44]]
+    				data: /*topics_icon*/ ctx[17][/*i*/ ctx[44]]
     			},
     			$$inline: true
     		});
@@ -3336,17 +3346,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_2.name,
+    		id: create_else_block_3.name,
     		type: "else",
-    		source: "(192:5) {:else}",
+    		source: "(193:5) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (186:5) {#if thetopic === topic}
-    function create_if_block_5(ctx) {
+    // (187:5) {#if thetopic === topic}
+    function create_if_block_7(ctx) {
     	let icon;
     	let current;
 
@@ -3354,7 +3364,7 @@ var app = (function () {
     			props: {
     				style: "size:1.5rem;color:#e73c7e;",
     				scale: "1.5",
-    				data: /*topics_icon*/ ctx[16][/*i*/ ctx[44]]
+    				data: /*topics_icon*/ ctx[17][/*i*/ ctx[44]]
     			},
     			$$inline: true
     		});
@@ -3384,16 +3394,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_5.name,
+    		id: create_if_block_7.name,
     		type: "if",
-    		source: "(186:5) {#if thetopic === topic}",
+    		source: "(187:5) {#if thetopic === topic}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (184:3) {#each topics as thetopic, i}
+    // (185:3) {#each topics as thetopic, i}
     function create_each_block_2(ctx) {
     	let button;
     	let current_block_type_index;
@@ -3401,11 +3411,11 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	const if_block_creators = [create_if_block_5, create_else_block_2];
+    	const if_block_creators = [create_if_block_7, create_else_block_3];
     	const if_blocks = [];
 
     	function select_block_type_1(ctx, dirty) {
-    		if (/*thetopic*/ ctx[42] === /*topic*/ ctx[8]) return 0;
+    		if (/*thetopic*/ ctx[42] === /*topic*/ ctx[10]) return 0;
     		return 1;
     	}
 
@@ -3413,14 +3423,14 @@ var app = (function () {
     	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[24](/*thetopic*/ ctx[42]);
+    		return /*click_handler*/ ctx[25](/*thetopic*/ ctx[42]);
     	}
 
     	const block = {
     		c: function create() {
     			button = element("button");
     			if_block.c();
-    			add_location(button, file, 184, 4, 4012);
+    			add_location(button, file, 185, 4, 4097);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3481,15 +3491,15 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(184:3) {#each topics as thetopic, i}",
+    		source: "(185:3) {#each topics as thetopic, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (210:4) {:else}
-    function create_else_block_1(ctx) {
+    // (211:4) {:else}
+    function create_else_block_2(ctx) {
     	let button;
     	let t_value = /*thelevel*/ ctx[39] + "";
     	let t;
@@ -3497,14 +3507,14 @@ var app = (function () {
     	let dispose;
 
     	function click_handler_2() {
-    		return /*click_handler_2*/ ctx[26](/*thelevel*/ ctx[39]);
+    		return /*click_handler_2*/ ctx[27](/*thelevel*/ ctx[39]);
     	}
 
     	const block = {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			add_location(button, file, 210, 5, 4568);
+    			add_location(button, file, 211, 5, 4653);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3517,7 +3527,7 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*$alllevels*/ 4096 && t_value !== (t_value = /*thelevel*/ ctx[39] + "")) set_data_dev(t, t_value);
+    			if (dirty[0] & /*$alllevels*/ 16384 && t_value !== (t_value = /*thelevel*/ ctx[39] + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(button);
@@ -3528,17 +3538,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_1.name,
+    		id: create_else_block_2.name,
     		type: "else",
-    		source: "(210:4) {:else}",
+    		source: "(211:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (205:4) {#if thelevel == $level}
-    function create_if_block_4(ctx) {
+    // (206:4) {#if thelevel == $level}
+    function create_if_block_6(ctx) {
     	let button;
     	let t_value = /*thelevel*/ ctx[39] + "";
     	let t;
@@ -3551,19 +3561,19 @@ var app = (function () {
     			t = text(t_value);
     			set_style(button, "size", "1.5rem");
     			set_style(button, "color", "#e73c7e");
-    			add_location(button, file, 205, 5, 4443);
+    			add_location(button, file, 206, 5, 4528);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
     			append_dev(button, t);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*click_handler_1*/ ctx[25], false, false, false);
+    				dispose = listen_dev(button, "click", /*click_handler_1*/ ctx[26], false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*$alllevels*/ 4096 && t_value !== (t_value = /*thelevel*/ ctx[39] + "")) set_data_dev(t, t_value);
+    			if (dirty[0] & /*$alllevels*/ 16384 && t_value !== (t_value = /*thelevel*/ ctx[39] + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(button);
@@ -3574,22 +3584,22 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4.name,
+    		id: create_if_block_6.name,
     		type: "if",
-    		source: "(205:4) {#if thelevel == $level}",
+    		source: "(206:4) {#if thelevel == $level}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (204:3) {#each $alllevels as thelevel}
+    // (205:3) {#each $alllevels as thelevel}
     function create_each_block_1(ctx) {
     	let if_block_anchor;
 
     	function select_block_type_2(ctx, dirty) {
-    		if (/*thelevel*/ ctx[39] == /*$level*/ ctx[9]) return create_if_block_4;
-    		return create_else_block_1;
+    		if (/*thelevel*/ ctx[39] == /*$level*/ ctx[11]) return create_if_block_6;
+    		return create_else_block_2;
     	}
 
     	let current_block_type = select_block_type_2(ctx);
@@ -3627,15 +3637,15 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(204:3) {#each $alllevels as thelevel}",
+    		source: "(205:3) {#each $alllevels as thelevel}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (223:4) {:else}
-    function create_else_block(ctx) {
+    // (224:4) {:else}
+    function create_else_block_1(ctx) {
     	let button;
     	let t0;
     	let t1_value = /*theop*/ ctx[36] + "";
@@ -3651,7 +3661,7 @@ var app = (function () {
     			t1 = text(t1_value);
     			t2 = text("  ");
     			attr_dev(button, "style", "padding:.3rem;");
-    			add_location(button, file, 223, 5, 4886);
+    			add_location(button, file, 224, 5, 4971);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3664,7 +3674,7 @@ var app = (function () {
     					button,
     					"click",
     					function () {
-    						if (is_function(/*updatetask*/ ctx[20](/*$level*/ ctx[9], /*theop*/ ctx[36]))) /*updatetask*/ ctx[20](/*$level*/ ctx[9], /*theop*/ ctx[36]).apply(this, arguments);
+    						if (is_function(/*updatetask*/ ctx[21](/*$level*/ ctx[11], /*theop*/ ctx[36]))) /*updatetask*/ ctx[21](/*$level*/ ctx[11], /*theop*/ ctx[36]).apply(this, arguments);
     					},
     					false,
     					false,
@@ -3676,7 +3686,7 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*$alloperations*/ 8192 && t1_value !== (t1_value = /*theop*/ ctx[36] + "")) set_data_dev(t1, t1_value);
+    			if (dirty[0] & /*$alloperations*/ 32768 && t1_value !== (t1_value = /*theop*/ ctx[36] + "")) set_data_dev(t1, t1_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(button);
@@ -3687,17 +3697,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block.name,
+    		id: create_else_block_1.name,
     		type: "else",
-    		source: "(223:4) {:else}",
+    		source: "(224:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (219:4) {#if operation === theop}
-    function create_if_block_3(ctx) {
+    // (220:4) {#if operation === theop}
+    function create_if_block_5(ctx) {
     	let button;
     	let t0;
     	let t1_value = /*theop*/ ctx[36] + "";
@@ -3712,7 +3722,7 @@ var app = (function () {
     			t2 = text("  ");
     			set_style(button, "color", "#e73c7e");
     			set_style(button, "padding", ".3rem");
-    			add_location(button, file, 219, 5, 4770);
+    			add_location(button, file, 220, 5, 4855);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3721,7 +3731,7 @@ var app = (function () {
     			append_dev(button, t2);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*$alloperations*/ 8192 && t1_value !== (t1_value = /*theop*/ ctx[36] + "")) set_data_dev(t1, t1_value);
+    			if (dirty[0] & /*$alloperations*/ 32768 && t1_value !== (t1_value = /*theop*/ ctx[36] + "")) set_data_dev(t1, t1_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(button);
@@ -3730,22 +3740,22 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3.name,
+    		id: create_if_block_5.name,
     		type: "if",
-    		source: "(219:4) {#if operation === theop}",
+    		source: "(220:4) {#if operation === theop}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (218:3) {#each $alloperations as theop}
+    // (219:3) {#each $alloperations as theop}
     function create_each_block(ctx) {
     	let if_block_anchor;
 
     	function select_block_type_3(ctx, dirty) {
-    		if (/*operation*/ ctx[7] === /*theop*/ ctx[36]) return create_if_block_3;
-    		return create_else_block;
+    		if (/*operation*/ ctx[9] === /*theop*/ ctx[36]) return create_if_block_5;
+    		return create_else_block_1;
     	}
 
     	let current_block_type = select_block_type_3(ctx);
@@ -3783,15 +3793,15 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(218:3) {#each $alloperations as theop}",
+    		source: "(219:3) {#each $alloperations as theop}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (232:2) {#if $name!="Test"}
-    function create_if_block_2(ctx) {
+    // (233:2) {#if $name!="Test"}
+    function create_if_block_4(ctx) {
     	let div;
     	let button0;
     	let t1;
@@ -3812,11 +3822,11 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "schließen";
     			attr_dev(button0, "class", "strongbtn");
-    			add_location(button0, file, 233, 3, 5085);
-    			add_location(br, file, 236, 3, 5172);
+    			add_location(button0, file, 234, 3, 5170);
+    			add_location(br, file, 237, 3, 5257);
     			attr_dev(button1, "class", "strongbtn");
-    			add_location(button1, file, 237, 3, 5180);
-    			add_location(div, file, 232, 2, 5076);
+    			add_location(button1, file, 238, 3, 5265);
+    			add_location(div, file, 233, 2, 5161);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3828,8 +3838,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*click_handler_3*/ ctx[27], false, false, false),
-    					listen_dev(button1, "click", /*click_handler_4*/ ctx[28], false, false, false)
+    					listen_dev(button0, "click", /*click_handler_3*/ ctx[28], false, false, false),
+    					listen_dev(button1, "click", /*click_handler_4*/ ctx[29], false, false, false)
     				];
 
     				mounted = true;
@@ -3845,16 +3855,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2.name,
+    		id: create_if_block_4.name,
     		type: "if",
-    		source: "(232:2) {#if $name!=\\\"Test\\\"}",
+    		source: "(233:2) {#if $name!=\\\"Test\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (244:1) {#if $name!="Test"}
+    // (245:1) {#if $name!="Test"}
     function create_if_block(ctx) {
     	let div0;
     	let h3;
@@ -3866,31 +3876,31 @@ var app = (function () {
     	let t5;
     	let t6;
     	let t7;
-    	let p;
-    	let t9;
+    	let t8;
     	let div1;
     	let keypad;
     	let updating_value;
-    	let t10;
+    	let t9;
     	let div2;
     	let button;
     	let current;
     	let mounted;
     	let dispose;
+    	let if_block = /*check*/ ctx[8] == true && create_if_block_1(ctx);
 
     	function keypad_value_binding(value) {
-    		/*keypad_value_binding*/ ctx[29](value);
+    		/*keypad_value_binding*/ ctx[30](value);
     	}
 
     	let keypad_props = {};
 
-    	if (/*res*/ ctx[6] !== void 0) {
-    		keypad_props.value = /*res*/ ctx[6];
+    	if (/*res*/ ctx[7] !== void 0) {
+    		keypad_props.value = /*res*/ ctx[7];
     	}
 
     	keypad = new Keypad({ props: keypad_props, $$inline: true });
     	binding_callbacks.push(() => bind(keypad, "value", keypad_value_binding));
-    	keypad.$on("submit", /*checkres*/ ctx[22]);
+    	keypad.$on("submit", /*checkres*/ ctx[23]);
 
     	const block = {
     		c: function create() {
@@ -3900,33 +3910,31 @@ var app = (function () {
     			t1 = space();
     			span = element("span");
     			t2 = text(/*a*/ ctx[0]);
-    			t3 = text(/*operation*/ ctx[7]);
+    			t3 = text(/*operation*/ ctx[9]);
     			t4 = text(/*b*/ ctx[1]);
     			t5 = text(" = ");
-    			t6 = text(/*res*/ ctx[6]);
+    			t6 = text(/*res*/ ctx[7]);
     			t7 = space();
-    			p = element("p");
-    			p.textContent = `${/*check*/ ctx[14]}`;
-    			t9 = space();
+    			if (if_block) if_block.c();
+    			t8 = space();
     			div1 = element("div");
     			create_component(keypad.$$.fragment);
-    			t10 = space();
+    			t9 = space();
     			div2 = element("div");
     			button = element("button");
     			button.textContent = "Einstellungen ändern";
-    			add_location(h3, file, 245, 2, 5341);
+    			add_location(h3, file, 246, 2, 5426);
     			attr_dev(span, "class", "huge");
-    			add_location(span, file, 246, 2, 5366);
-    			add_location(p, file, 247, 2, 5421);
+    			add_location(span, file, 247, 2, 5451);
     			attr_dev(div0, "class", "centered");
-    			add_location(div0, file, 244, 1, 5316);
+    			add_location(div0, file, 245, 1, 5401);
     			set_style(div1, "display", "flex");
     			set_style(div1, "justify-content", "space-around");
-    			add_location(div1, file, 250, 1, 5446);
+    			add_location(div1, file, 266, 1, 5804);
     			attr_dev(button, "class", "strongbtn");
-    			add_location(button, file, 254, 2, 5593);
+    			add_location(button, file, 270, 2, 5951);
     			set_style(div2, "margin", "3rem");
-    			add_location(div2, file, 253, 1, 5564);
+    			add_location(div2, file, 269, 1, 5922);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -3939,30 +3947,54 @@ var app = (function () {
     			append_dev(span, t5);
     			append_dev(span, t6);
     			append_dev(div0, t7);
-    			append_dev(div0, p);
-    			insert_dev(target, t9, anchor);
+    			if (if_block) if_block.m(div0, null);
+    			insert_dev(target, t8, anchor);
     			insert_dev(target, div1, anchor);
     			mount_component(keypad, div1, null);
-    			insert_dev(target, t10, anchor);
+    			insert_dev(target, t9, anchor);
     			insert_dev(target, div2, anchor);
     			append_dev(div2, button);
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*click_handler_5*/ ctx[30], false, false, false);
+    				dispose = listen_dev(button, "click", /*click_handler_5*/ ctx[31], false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
     			if (!current || dirty[0] & /*a*/ 1) set_data_dev(t2, /*a*/ ctx[0]);
-    			if (!current || dirty[0] & /*operation*/ 128) set_data_dev(t3, /*operation*/ ctx[7]);
+    			if (!current || dirty[0] & /*operation*/ 512) set_data_dev(t3, /*operation*/ ctx[9]);
     			if (!current || dirty[0] & /*b*/ 2) set_data_dev(t4, /*b*/ ctx[1]);
-    			if (!current || dirty[0] & /*res*/ 64) set_data_dev(t6, /*res*/ ctx[6]);
+    			if (!current || dirty[0] & /*res*/ 128) set_data_dev(t6, /*res*/ ctx[7]);
+
+    			if (/*check*/ ctx[8] == true) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty[0] & /*check*/ 256) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block_1(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(div0, null);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+
     			const keypad_changes = {};
 
-    			if (!updating_value && dirty[0] & /*res*/ 64) {
+    			if (!updating_value && dirty[0] & /*res*/ 128) {
     				updating_value = true;
-    				keypad_changes.value = /*res*/ ctx[6];
+    				keypad_changes.value = /*res*/ ctx[7];
     				add_flush_callback(() => updating_value = false);
     			}
 
@@ -3970,19 +4002,22 @@ var app = (function () {
     		},
     		i: function intro(local) {
     			if (current) return;
+    			transition_in(if_block);
     			transition_in(keypad.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
+    			transition_out(if_block);
     			transition_out(keypad.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div0);
-    			if (detaching) detach_dev(t9);
+    			if (if_block) if_block.d();
+    			if (detaching) detach_dev(t8);
     			if (detaching) detach_dev(div1);
     			destroy_component(keypad);
-    			if (detaching) detach_dev(t10);
+    			if (detaching) detach_dev(t9);
     			if (detaching) detach_dev(div2);
     			mounted = false;
     			dispose();
@@ -3993,7 +4028,193 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(244:1) {#if $name!=\\\"Test\\\"}",
+    		source: "(245:1) {#if $name!=\\\"Test\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (249:3) {#if check==true}
+    function create_if_block_1(ctx) {
+    	let current_block_type_index;
+    	let if_block;
+    	let if_block_anchor;
+    	let current;
+    	const if_block_creators = [create_if_block_2, create_else_block];
+    	const if_blocks = [];
+
+    	function select_block_type_4(ctx, dirty) {
+    		if (/*res*/ ctx[7] == /*desired*/ ctx[2]) return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type_4(ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	const block = {
+    		c: function create() {
+    			if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if_blocks[current_block_type_index].m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			let previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type_4(ctx);
+
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(ctx, dirty);
+    			} else {
+    				group_outros();
+
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+
+    				check_outros();
+    				if_block = if_blocks[current_block_type_index];
+
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				} else {
+    					if_block.p(ctx, dirty);
+    				}
+
+    				transition_in(if_block, 1);
+    				if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if_blocks[current_block_type_index].d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(249:3) {#if check==true}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (256:3) {:else}
+    function create_else_block(ctx) {
+    	let span;
+    	let icon;
+    	let current;
+
+    	icon = new Icon({
+    			props: {
+    				scale: "2.0",
+    				style: "size:1.5rem;margin-left: 5px;",
+    				data: faFrown
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			create_component(icon.$$.fragment);
+    			add_location(span, file, 256, 3, 5672);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			mount_component(icon, span, null);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(icon.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(icon.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    			destroy_component(icon);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block.name,
+    		type: "else",
+    		source: "(256:3) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (251:3) {#if res == desired}
+    function create_if_block_2(ctx) {
+    	let span;
+    	let icon;
+    	let current;
+
+    	icon = new Icon({
+    			props: {
+    				scale: "2.0",
+    				style: "size:1.5rem;margin-left: 5px;",
+    				data: faSmile
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			create_component(icon.$$.fragment);
+    			add_location(span, file, 251, 3, 5557);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			mount_component(icon, span, null);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(icon.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(icon.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    			destroy_component(icon);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(251:3) {#if res == desired}",
     		ctx
     	});
 
@@ -4011,9 +4232,9 @@ var app = (function () {
     	let t3;
     	let t4;
     	let current;
-    	let if_block0 = /*$name*/ ctx[10] !== "Test" && create_if_block_9(ctx);
-    	let if_block1 = /*good*/ ctx[2] + /*wrong*/ ctx[3] > 0 && create_if_block_8(ctx);
-    	let each_value_3 = /*$photos*/ ctx[11];
+    	let if_block0 = /*$name*/ ctx[12] !== "Test" && create_if_block_11(ctx);
+    	let if_block1 = /*good*/ ctx[3] + /*wrong*/ ctx[4] > 0 && create_if_block_10(ctx);
+    	let each_value_3 = /*$photos*/ ctx[13];
     	validate_each_argument(each_value_3);
     	let each_blocks = [];
 
@@ -4021,8 +4242,8 @@ var app = (function () {
     		each_blocks[i] = create_each_block_3(get_each_context_3(ctx, each_value_3, i));
     	}
 
-    	let if_block2 = !/*settingsok*/ ctx[4] | /*showsettings*/ ctx[5] && create_if_block_1(ctx);
-    	let if_block3 = /*$name*/ ctx[10] != "Test" && create_if_block(ctx);
+    	let if_block2 = !/*settingsok*/ ctx[5] | /*showsettings*/ ctx[6] && create_if_block_3(ctx);
+    	let if_block3 = /*$name*/ ctx[12] != "Test" && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
@@ -4044,11 +4265,11 @@ var app = (function () {
     			if (if_block2) if_block2.c();
     			t4 = space();
     			if (if_block3) if_block3.c();
-    			add_location(h1, file, 140, 2, 3169);
+    			add_location(h1, file, 141, 2, 3254);
     			attr_dev(div0, "class", "gallery-grid");
-    			add_location(div0, file, 152, 2, 3383);
-    			add_location(div1, file, 139, 1, 3161);
-    			add_location(main, file, 138, 0, 3153);
+    			add_location(div0, file, 153, 2, 3468);
+    			add_location(div1, file, 140, 1, 3246);
+    			add_location(main, file, 139, 0, 3238);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4075,11 +4296,11 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (/*$name*/ ctx[10] !== "Test") {
+    			if (/*$name*/ ctx[12] !== "Test") {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
-    					if_block0 = create_if_block_9(ctx);
+    					if_block0 = create_if_block_11(ctx);
     					if_block0.c();
     					if_block0.m(h1, t0);
     				}
@@ -4088,11 +4309,11 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (/*good*/ ctx[2] + /*wrong*/ ctx[3] > 0) {
+    			if (/*good*/ ctx[3] + /*wrong*/ ctx[4] > 0) {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
-    					if_block1 = create_if_block_8(ctx);
+    					if_block1 = create_if_block_10(ctx);
     					if_block1.c();
     					if_block1.m(div1, t2);
     				}
@@ -4101,8 +4322,8 @@ var app = (function () {
     				if_block1 = null;
     			}
 
-    			if (dirty[0] & /*$photos, good, $level*/ 2564) {
-    				each_value_3 = /*$photos*/ ctx[11];
+    			if (dirty[0] & /*$photos, good, $level*/ 10248) {
+    				each_value_3 = /*$photos*/ ctx[13];
     				validate_each_argument(each_value_3);
     				let i;
 
@@ -4125,15 +4346,15 @@ var app = (function () {
     				each_blocks.length = each_value_3.length;
     			}
 
-    			if (!/*settingsok*/ ctx[4] | /*showsettings*/ ctx[5]) {
+    			if (!/*settingsok*/ ctx[5] | /*showsettings*/ ctx[6]) {
     				if (if_block2) {
     					if_block2.p(ctx, dirty);
 
-    					if (dirty[0] & /*settingsok, showsettings*/ 48) {
+    					if (dirty[0] & /*settingsok, showsettings*/ 96) {
     						transition_in(if_block2, 1);
     					}
     				} else {
-    					if_block2 = create_if_block_1(ctx);
+    					if_block2 = create_if_block_3(ctx);
     					if_block2.c();
     					transition_in(if_block2, 1);
     					if_block2.m(main, t4);
@@ -4148,11 +4369,11 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (/*$name*/ ctx[10] != "Test") {
+    			if (/*$name*/ ctx[12] != "Test") {
     				if (if_block3) {
     					if_block3.p(ctx, dirty);
 
-    					if (dirty[0] & /*$name*/ 1024) {
+    					if (dirty[0] & /*$name*/ 4096) {
     						transition_in(if_block3, 1);
     					}
     				} else {
@@ -4210,15 +4431,15 @@ var app = (function () {
     	let $alllevels;
     	let $alloperations;
     	validate_store(level, "level");
-    	component_subscribe($$self, level, $$value => $$invalidate(9, $level = $$value));
+    	component_subscribe($$self, level, $$value => $$invalidate(11, $level = $$value));
     	validate_store(name, "name");
-    	component_subscribe($$self, name, $$value => $$invalidate(10, $name = $$value));
+    	component_subscribe($$self, name, $$value => $$invalidate(12, $name = $$value));
     	validate_store(photos, "photos");
-    	component_subscribe($$self, photos, $$value => $$invalidate(11, $photos = $$value));
+    	component_subscribe($$self, photos, $$value => $$invalidate(13, $photos = $$value));
     	validate_store(alllevels, "alllevels");
-    	component_subscribe($$self, alllevels, $$value => $$invalidate(12, $alllevels = $$value));
+    	component_subscribe($$self, alllevels, $$value => $$invalidate(14, $alllevels = $$value));
     	validate_store(alloperations, "alloperations");
-    	component_subscribe($$self, alloperations, $$value => $$invalidate(13, $alloperations = $$value));
+    	component_subscribe($$self, alloperations, $$value => $$invalidate(15, $alloperations = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
     	let settings = {};
@@ -4230,7 +4451,7 @@ var app = (function () {
     	let settingsok;
     	let showsettings;
     	let res = "";
-    	let check = "";
+    	let check = false;
     	let operation = "+";
     	let topics = ["spacex", "cute,dog", "cute,cat", "cute,rabbit", "horse"];
     	let topics_icon = [faRocket, faDog, faCat, faPaw, faHorse];
@@ -4243,7 +4464,7 @@ var app = (function () {
     	});
 
     	function settopic(thename) {
-    		$$invalidate(8, topic = thename);
+    		$$invalidate(10, topic = thename);
     		newtopic();
     	}
 
@@ -4252,28 +4473,28 @@ var app = (function () {
     		let tempresults = JSON.parse(localStorage.getItem("results"));
 
     		if (settings) {
-    			$$invalidate(4, settingsok = true);
+    			$$invalidate(5, settingsok = true);
     			level.set(settings["level"]);
     			name.set(settings["name"]);
-    			$$invalidate(8, topic = settings["topic"]);
+    			$$invalidate(10, topic = settings["topic"]);
     		} else {
-    			$$invalidate(4, settingsok = false);
-    			$$invalidate(8, topic = "spacex");
+    			$$invalidate(5, settingsok = false);
+    			$$invalidate(10, topic = "spacex");
     		}
 
     		if (tempresults) {
     			results["ok"] = tempresults["ok"];
     			results["false"] = tempresults["false"];
-    			$$invalidate(2, good = results["ok"].length);
-    			$$invalidate(3, wrong = results["false"].length);
+    			$$invalidate(3, good = results["ok"].length);
+    			$$invalidate(4, wrong = results["false"].length);
     		} else {
-    			$$invalidate(2, good = 0);
-    			$$invalidate(3, wrong = 0);
+    			$$invalidate(3, good = 0);
+    			$$invalidate(4, wrong = 0);
     		}
     	}
 
     	function savesetttings() {
-    		$$invalidate(4, settingsok = true);
+    		$$invalidate(5, settingsok = true);
 
     		settings = {
     			level: $level,
@@ -4286,8 +4507,8 @@ var app = (function () {
     	}
 
     	function dochangesettings() {
-    		$$invalidate(5, showsettings = !showsettings);
-    		$$invalidate(4, settingsok = true);
+    		$$invalidate(6, showsettings = !showsettings);
+    		$$invalidate(5, settingsok = true);
     	}
 
     	async function newtopic() {
@@ -4307,28 +4528,28 @@ var app = (function () {
 
     	function updatetask(thelevel, theoperation) {
     		level.set(thelevel);
-    		$$invalidate(7, operation = theoperation);
+    		$$invalidate(9, operation = theoperation);
     		results["ok"] = [];
     		results["false"] = [];
     		localStorage.setItem("results", JSON.stringify(results));
-    		$$invalidate(3, wrong = 0);
-    		$$invalidate(2, good = 0);
+    		$$invalidate(4, wrong = 0);
+    		$$invalidate(3, good = 0);
     		newtask();
     	}
 
     	function newtask() {
-    		$$invalidate(6, res = "");
+    		$$invalidate(7, res = "");
     		let num1 = Math.round(Math.random() * $level);
     		let num2 = Math.round(Math.random() * $level);
 
     		if (operation == "+") {
-    			desired = Math.max(num1, num2);
+    			$$invalidate(2, desired = Math.max(num1, num2));
     			$$invalidate(0, a = Math.min(num1, num2));
     			$$invalidate(1, b = desired - a);
     		}
 
     		if (operation == "-") {
-    			desired = Math.min(num1, num2);
+    			$$invalidate(2, desired = Math.min(num1, num2));
     			$$invalidate(1, b = Math.min(num1, num2));
     			$$invalidate(0, a = b + desired);
     		}
@@ -4336,32 +4557,40 @@ var app = (function () {
     		if (operation == "x") {
     			num1 = Math.round(Math.random() * 10);
     			num2 = Math.round(Math.random() * 10);
-    			desired = num1 * num2;
+    			$$invalidate(2, desired = num1 * num2);
     			$$invalidate(1, b = num1);
     			$$invalidate(0, a = num2);
     		}
 
     		if (operation == ":") {
-    			desired = Math.round(Math.random() * 10);
+    			$$invalidate(2, desired = Math.round(Math.random() * 10));
     			$$invalidate(1, b = Math.round(Math.random() * 10));
     			$$invalidate(0, a = Math.floor(desired * b));
-    			desired = a / b;
+    			$$invalidate(2, desired = a / b);
     		}
     	}
 
     	const checkres = () => {
-    		let check = res == desired;
+    		let localcheck = res == desired;
 
-    		if (check) {
+    		if (localcheck) {
     			results["ok"].push([a, b, operation]);
-    			$$invalidate(2, good = results["ok"].length);
+    			$$invalidate(3, good = results["ok"].length);
     		} else {
     			results["false"].push([a, b, operation]);
-    			$$invalidate(3, wrong = results["false"].length);
+    			$$invalidate(4, wrong = results["false"].length);
     		}
 
     		localStorage.setItem("results", JSON.stringify(results));
-    		newtask();
+    		$$invalidate(8, check = true);
+
+    		setTimeout(
+    			() => {
+    				$$invalidate(8, check = false);
+    				newtask();
+    			},
+    			500
+    		);
     	};
 
     	const writable_props = [];
@@ -4383,7 +4612,7 @@ var app = (function () {
 
     	function keypad_value_binding(value) {
     		res = value;
-    		$$invalidate(6, res);
+    		$$invalidate(7, res);
     	}
 
     	const click_handler_5 = () => dochangesettings();
@@ -4396,6 +4625,8 @@ var app = (function () {
     		faCat,
     		faHorse,
     		faPaw,
+    		faSmile,
+    		faFrown,
     		photos,
     		level,
     		name,
@@ -4436,17 +4667,17 @@ var app = (function () {
     		if ("settings" in $$props) settings = $$props.settings;
     		if ("a" in $$props) $$invalidate(0, a = $$props.a);
     		if ("b" in $$props) $$invalidate(1, b = $$props.b);
-    		if ("desired" in $$props) desired = $$props.desired;
-    		if ("good" in $$props) $$invalidate(2, good = $$props.good);
-    		if ("wrong" in $$props) $$invalidate(3, wrong = $$props.wrong);
-    		if ("settingsok" in $$props) $$invalidate(4, settingsok = $$props.settingsok);
-    		if ("showsettings" in $$props) $$invalidate(5, showsettings = $$props.showsettings);
-    		if ("res" in $$props) $$invalidate(6, res = $$props.res);
-    		if ("check" in $$props) $$invalidate(14, check = $$props.check);
-    		if ("operation" in $$props) $$invalidate(7, operation = $$props.operation);
-    		if ("topics" in $$props) $$invalidate(15, topics = $$props.topics);
-    		if ("topics_icon" in $$props) $$invalidate(16, topics_icon = $$props.topics_icon);
-    		if ("topic" in $$props) $$invalidate(8, topic = $$props.topic);
+    		if ("desired" in $$props) $$invalidate(2, desired = $$props.desired);
+    		if ("good" in $$props) $$invalidate(3, good = $$props.good);
+    		if ("wrong" in $$props) $$invalidate(4, wrong = $$props.wrong);
+    		if ("settingsok" in $$props) $$invalidate(5, settingsok = $$props.settingsok);
+    		if ("showsettings" in $$props) $$invalidate(6, showsettings = $$props.showsettings);
+    		if ("res" in $$props) $$invalidate(7, res = $$props.res);
+    		if ("check" in $$props) $$invalidate(8, check = $$props.check);
+    		if ("operation" in $$props) $$invalidate(9, operation = $$props.operation);
+    		if ("topics" in $$props) $$invalidate(16, topics = $$props.topics);
+    		if ("topics_icon" in $$props) $$invalidate(17, topics_icon = $$props.topics_icon);
+    		if ("topic" in $$props) $$invalidate(10, topic = $$props.topic);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -4456,11 +4687,13 @@ var app = (function () {
     	return [
     		a,
     		b,
+    		desired,
     		good,
     		wrong,
     		settingsok,
     		showsettings,
     		res,
+    		check,
     		operation,
     		topic,
     		$level,
@@ -4468,7 +4701,6 @@ var app = (function () {
     		$photos,
     		$alllevels,
     		$alloperations,
-    		check,
     		topics,
     		topics_icon,
     		settopic,

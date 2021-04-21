@@ -1,7 +1,7 @@
 <script>
 	import Keypad from "./Keypad.svelte";
 	import Icon from "svelte-awesome";
-	import { faRocket, faDog, faCat, faHorse,faPaw } from "@fortawesome/free-solid-svg-icons";
+	import { faRocket, faDog, faCat, faHorse,faPaw, faSmile, faFrown} from "@fortawesome/free-solid-svg-icons";
 	import { photos,level, name, results, alllevels, alloperations } from "./store.js";
 	import { onMount } from "svelte";
 	let settings = {};
@@ -13,7 +13,7 @@
 	let settingsok;
 	let showsettings;
 	let res = "";
-	let check = "";
+	let check = false;
 	let operation = "+";
 	let topics = ["spacex", "cute,dog", "cute,cat","cute,rabbit","horse"];
 	let topics_icon = [faRocket, faDog, faCat,faPaw,faHorse];
@@ -122,9 +122,9 @@
 		}
 	}
 	const checkres = () => {
-		let check = res == desired;
+		let localcheck = res == desired;
 
-		if (check) {
+		if (localcheck) {
 			results["ok"].push([a, b, operation]);
 			good = results["ok"].length;
 		} else {
@@ -132,7 +132,8 @@
 			wrong = results["false"].length;
 		}
 		localStorage.setItem("results", JSON.stringify(results));
-		newtask();
+		check=true;
+		setTimeout(() => {  check=false;newtask(); }, 500);
 	};
 </script>
 
@@ -244,8 +245,23 @@
 	{#if $name!="Test"}
 	<div class="centered">
 		<h3>Deine Aufgabe</h3>
-		<span class="huge"> {a}{operation}{b} = {res}</span>
-		<p>{check}</p>
+		<span class="huge"> {a}{operation}{b} = {res} </span>
+			{#if check==true}
+			
+			{#if res == desired}
+			<span >	
+				<Icon scale="2.0"
+				style="size:1.5rem;margin-left: 5px;" data={faSmile}/></span>
+			
+			{:else}
+			<span ><Icon 	scale="2.0"
+				style="size:1.5rem;margin-left: 5px;" data={faFrown}/></span>
+		
+			{/if}
+			{/if}
+		
+		
+		
 	</div>
 
 	<div style="display:flex;justify-content: space-around;">
