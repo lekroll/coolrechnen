@@ -2820,7 +2820,7 @@ var app = (function () {
     			t1 = text("% richtig von ");
     			t2 = text(t2_value);
     			t3 = text(" Aufgaben");
-    			add_location(p, file, 148, 2, 3359);
+    			add_location(p, file, 148, 2, 3366);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -2856,7 +2856,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div = element("div");
-    			add_location(div, file, 162, 3, 3687);
+    			add_location(div, file, 162, 3, 3694);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2894,9 +2894,9 @@ var app = (function () {
     			if (img.src !== (img_src_value = /*foto*/ ctx[45])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
     			attr_dev(img, "title", "");
-    			add_location(img, file, 159, 5, 3601);
+    			add_location(img, file, 159, 5, 3608);
     			attr_dev(figure, "class", "gallery-frame");
-    			add_location(figure, file, 158, 3, 3565);
+    			add_location(figure, file, 158, 3, 3572);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, figure, anchor);
@@ -3068,14 +3068,14 @@ var app = (function () {
     			t12 = space();
     			if (if_block1) if_block1.c();
     			if_block1_anchor = empty();
-    			add_location(h3, file, 173, 3, 3792);
+    			add_location(h3, file, 173, 3, 3799);
     			attr_dev(input, "placeholder", "enter your name");
-    			add_location(input, file, 178, 15, 3962);
-    			add_location(p0, file, 174, 3, 3818);
-    			add_location(p1, file, 183, 3, 4046);
-    			add_location(p2, file, 202, 3, 4433);
-    			add_location(p3, file, 217, 3, 4768);
-    			add_location(div, file, 172, 2, 3783);
+    			add_location(input, file, 178, 15, 3969);
+    			add_location(p0, file, 174, 3, 3825);
+    			add_location(p1, file, 183, 3, 4053);
+    			add_location(p2, file, 202, 3, 4440);
+    			add_location(p3, file, 217, 3, 4775);
+    			add_location(div, file, 172, 2, 3790);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3280,9 +3280,9 @@ var app = (function () {
     			strong.textContent = "Bitte ändere Deinen Namen und wähle eine Schwierigkeitsstufe!";
     			br0 = element("br");
     			br1 = element("br");
-    			add_location(strong, file, 176, 4, 3850);
-    			add_location(br0, file, 176, 82, 3928);
-    			add_location(br1, file, 176, 86, 3932);
+    			add_location(strong, file, 176, 4, 3857);
+    			add_location(br0, file, 176, 82, 3935);
+    			add_location(br1, file, 176, 86, 3939);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, strong, anchor);
@@ -3430,7 +3430,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			if_block.c();
-    			add_location(button, file, 185, 4, 4097);
+    			add_location(button, file, 185, 4, 4104);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3514,7 +3514,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			add_location(button, file, 211, 5, 4653);
+    			add_location(button, file, 211, 5, 4660);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3561,7 +3561,7 @@ var app = (function () {
     			t = text(t_value);
     			set_style(button, "size", "1.5rem");
     			set_style(button, "color", "#e73c7e");
-    			add_location(button, file, 206, 5, 4528);
+    			add_location(button, file, 206, 5, 4535);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3661,7 +3661,7 @@ var app = (function () {
     			t1 = text(t1_value);
     			t2 = text("  ");
     			attr_dev(button, "style", "padding:.3rem;");
-    			add_location(button, file, 224, 5, 4971);
+    			add_location(button, file, 224, 5, 4978);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3722,7 +3722,7 @@ var app = (function () {
     			t2 = text("  ");
     			set_style(button, "color", "#e73c7e");
     			set_style(button, "padding", ".3rem");
-    			add_location(button, file, 220, 5, 4855);
+    			add_location(button, file, 220, 5, 4862);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3822,11 +3822,11 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "schließen";
     			attr_dev(button0, "class", "strongbtn");
-    			add_location(button0, file, 234, 3, 5170);
-    			add_location(br, file, 237, 3, 5257);
+    			add_location(button0, file, 234, 3, 5177);
+    			add_location(br, file, 237, 3, 5264);
     			attr_dev(button1, "class", "strongbtn");
-    			add_location(button1, file, 238, 3, 5265);
-    			add_location(div, file, 233, 2, 5161);
+    			add_location(button1, file, 238, 3, 5272);
+    			add_location(div, file, 233, 2, 5168);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3923,18 +3923,18 @@ var app = (function () {
     			div2 = element("div");
     			button = element("button");
     			button.textContent = "Einstellungen ändern";
-    			add_location(h3, file, 246, 2, 5426);
+    			add_location(h3, file, 246, 2, 5433);
     			attr_dev(span, "class", "huge");
-    			add_location(span, file, 247, 2, 5451);
+    			add_location(span, file, 247, 2, 5458);
     			attr_dev(div0, "class", "centered");
-    			add_location(div0, file, 245, 1, 5401);
+    			add_location(div0, file, 245, 1, 5408);
     			set_style(div1, "display", "flex");
     			set_style(div1, "justify-content", "space-around");
-    			add_location(div1, file, 266, 1, 5804);
+    			add_location(div1, file, 266, 1, 5811);
     			attr_dev(button, "class", "strongbtn");
-    			add_location(button, file, 270, 2, 5951);
+    			add_location(button, file, 270, 2, 5958);
     			set_style(div2, "margin", "3rem");
-    			add_location(div2, file, 269, 1, 5922);
+    			add_location(div2, file, 269, 1, 5929);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -4134,7 +4134,7 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			create_component(icon.$$.fragment);
-    			add_location(span, file, 256, 3, 5672);
+    			add_location(span, file, 256, 3, 5679);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -4187,7 +4187,7 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			create_component(icon.$$.fragment);
-    			add_location(span, file, 251, 3, 5557);
+    			add_location(span, file, 251, 3, 5564);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -4265,11 +4265,11 @@ var app = (function () {
     			if (if_block2) if_block2.c();
     			t4 = space();
     			if (if_block3) if_block3.c();
-    			add_location(h1, file, 141, 2, 3254);
+    			add_location(h1, file, 141, 2, 3261);
     			attr_dev(div0, "class", "gallery-grid");
-    			add_location(div0, file, 153, 2, 3468);
-    			add_location(div1, file, 140, 1, 3246);
-    			add_location(main, file, 139, 0, 3238);
+    			add_location(div0, file, 153, 2, 3475);
+    			add_location(div1, file, 140, 1, 3253);
+    			add_location(main, file, 139, 0, 3245);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4453,7 +4453,7 @@ var app = (function () {
     	let res = "";
     	let check = false;
     	let operation = "+";
-    	let topics = ["spacex", "cute,dog", "cute,cat", "cute,rabbit", "horse"];
+    	let topics = ["nasa,rocket", "cute,dog", "cute,cat", "cute,rabbit", "horse"];
     	let topics_icon = [faRocket, faDog, faCat, faPaw, faHorse];
     	let topic;
 
@@ -4479,7 +4479,7 @@ var app = (function () {
     			$$invalidate(10, topic = settings["topic"]);
     		} else {
     			$$invalidate(5, settingsok = false);
-    			$$invalidate(10, topic = "spacex");
+    			$$invalidate(10, topic = "cute,cat");
     		}
 
     		if (tempresults) {

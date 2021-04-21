@@ -15,7 +15,7 @@
 	let res = "";
 	let check = false;
 	let operation = "+";
-	let topics = ["spacex", "cute,dog", "cute,cat","cute,rabbit","horse"];
+	let topics = ["nasa,rocket", "cute,dog", "cute,cat","cute,rabbit","horse"];
 	let topics_icon = [faRocket, faDog, faCat,faPaw,faHorse];
 	let topic;
 	onMount(async () => {
@@ -41,7 +41,7 @@
 			topic = settings["topic"];
 		} else {
 			settingsok = false;
-			topic = "spacex";
+			topic = "cute,cat";
 		}
 		if (tempresults) {
 			results["ok"]=tempresults["ok"];
