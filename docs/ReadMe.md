@@ -1,5 +1,7 @@
 # Coolrechnen 
 
+![app_screenshot.png]
+
 Dieses App bietet einen einfachen Weg das 1x1 zu üben. Die App unterstützt 
 - alle vier Grundrechenarten 
 - Zahlenräume bis
