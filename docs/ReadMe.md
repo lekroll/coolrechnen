@@ -19,7 +19,7 @@ Dieses App bietet einen einfachen Weg das 1x1 zu üben. Die App unterstützt
   100
 - Einfache Erfolgskontrolle über Tierbilder für Kinder und Angaben zur Zahl der bearbeiteten Aufgaben inkl. Anteil richtiger Aufgaben für Kinder. 
 
-Die App wird ohne Gewähr bereitgestellt. 
+Die App wird ohne Gewähr als Technologiedemonstrator bereitgestellt. 
 
 # Datenschutz
 
